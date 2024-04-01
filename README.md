@@ -12,6 +12,12 @@
 | 30/3 | Bruno Alegria | Updated READ.md |
 | 1/4 | Mariana Martins | Added Architecture description and references |
 | 1/4 | Mariana Martins | Created Class Game in Game.cs |
+| 1/4 | Ivan Emidio | Created Class Board in Board.cs |
+| 1/4 | Ivan Emidio | Added Code to the Board in Board.cs |
+| 1/4 | Ivan Emidio | Looped the Board in Game.cs |
+| 1/4 | Ivan Emidio | Created Class Piece in Piece.cs |
+| 1/4 | Ivan Emidio | Added Coordinates to Pieces in Piece.cs |
+| 1/4 | Ivan Emidio | Updated README.md |
 
 ---
 ## Architecture
@@ -27,6 +33,7 @@ M(Main) --> G(Game)
 
 ---
 ## References
+Board Game Idea: https://www.w3schools.com/cs/cs_arrays_multi.php
 #### Ideas
 * Mariana - To have 4 classes for the project, and deal with the window in the Game class.
 * Mariana - use and enumeration with bit by bit to identify pieces
