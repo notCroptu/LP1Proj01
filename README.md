@@ -10,7 +10,7 @@
 | 29/3 | Mariana Martins | Added solution and project |
 | 29/3 | Mariana Martins | Formated README.md in markdown |
 | 30/3 | Bruno Alegria | Updated READ.md |
-| 1/4 | Mariana Martins | Added Architecture description |
+| 1/4 | Mariana Martins | Added Architecture description and references |
 | 1/4 | Mariana Martins | Created Class Game in Game.cs |
 
 ---
@@ -28,6 +28,9 @@ M(Main) --> G(Game)
 ---
 ## References
 #### Ideas
+* Mariana - To have 4 classes for the project, and deal with the window in the Game class.
+* Mariana - use and enumeration with bit by bit to identify pieces
+* Mariana - have an array for the board where we place the pieces, and is read in a for when we want to check is the piece is in use
 #### Ai Code
 #### Open Code
 #### Libraries
