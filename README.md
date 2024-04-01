@@ -33,7 +33,11 @@ M(Main) --> G(Game)
 
 ---
 ## References
-Board Game Idea: https://www.w3schools.com/cs/cs_arrays_multi.php
+Board Game References:
+* https://www.w3schools.com/cs/cs_arrays_multi.php
+* https://www.w3schools.com/cs/cs_classes.php
+* https://www.w3schools.com/cs/cs_constructors.php
+
 #### Ideas
 * Mariana - To have 4 classes for the project, and deal with the window in the Game class.
 * Mariana - use and enumeration with bit by bit to identify pieces
