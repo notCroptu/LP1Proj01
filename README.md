@@ -10,13 +10,20 @@
 | 29/3 | Mariana Martins | Added solution and project |
 | 29/3 | Mariana Martins | Formated README.md in markdown |
 | 30/3 | Bruno Alegria | Updated READ.md |
+| 1/4 | Mariana Martins | Added Architecture description |
+| 1/4 | Mariana Martins | Created Class Game in Game.cs |
 
 ---
 ## Architecture
 
-> here goes the description
+> here goes the description (organizations and non trivial algorithms)
 
-> here goes the fluxogram
+    Our project is organized between 5 classes, Game, Board, Player and Piece. Where Game initiates the instances necessary for the program and has the game loop, Board is an object with the state of the game board and all the Piece Objects in it in a Pieces array, Player has the methods necessary for the moves the player can take, and Piece is an object that is instantiated with an enumeration.
+
+> here goes the fluxogram (steps walked through in the program)
+
+flowchart LR
+M(Main) --> G(Game)
 
 ---
 ## References
@@ -24,6 +31,5 @@
 #### Ai Code
 #### Open Code
 #### Libraries
-> [Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/)
-> [Markdown documentation](https://paperhive.org/help/markdown)
-> [Markdown documentation](https://paperhive.org/help/markdown)
+* [Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/) 
+* [Markdown documentation](https://paperhive.org/help/markdown)
