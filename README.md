@@ -1,5 +1,5 @@
 # Galo da Velha
-#### By Bruno Alegria a22302942, Ivan Emídio, Mariana Martins a22302203
+#### By Bruno Alegria a22302942, Ivan Emídio a22301234, Mariana Martins a22302203
 ##### Linguagens de Programação I - Projeto 1
 [Project's Git link](https://github.com/notCroptu/LP1Proj01.git)
 
