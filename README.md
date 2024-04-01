@@ -9,15 +9,17 @@
 | 29/3 | Mariana Martins | Created git |
 | 29/3 | Mariana Martins | Added solution and project |
 | 29/3 | Mariana Martins | Formated README.md in markdown |
-| 30/3 | Bruno Alegria | Updated READ.md |
-| 1/4 | Mariana Martins | Added Architecture description and references |
+| 30/3 | Bruno Alegria | Updated README.md |
+| 1/4 | Mariana Martins | Added Architecture description and references |                    /// tipo aqui, eu espcifiquei references
 | 1/4 | Mariana Martins | Created Class Game in Game.cs |
 | 1/4 | Ivan Emidio | Created Class Board in Board.cs |
-| 1/4 | Ivan Emidio | Added Code to the Board in Board.cs |
+| 1/4 | Ivan Emidio | Added Code to the Board in Board.cs |                                        /// especifica pls
 | 1/4 | Ivan Emidio | Looped the Board in Game.cs |
 | 1/4 | Ivan Emidio | Created Class Piece in Piece.cs |
-| 1/4 | Ivan Emidio | Added Coordinates to Pieces in Piece.cs |
+| 1/4 | Ivan Emidio | Added Coordinates to Pieces in Piece.cs |     /// bruh? porque dizer isto em especifico e deixar o resto todo?
 | 1/4 | Ivan Emidio | Updated README.md |
+| 1/4 | Mariana Martins | Created CreatePieces Method in Board Class |
+| 1/4 | Mariana Martins | Created PiecesChar Enumeration in PiecesChar.cs |
 
 ---
 ## Architecture
