@@ -9,7 +9,7 @@
 | 29/3 | Mariana Martins | Created git |
 | 29/3 | Mariana Martins | Added solution and project |
 | 29/3 | Mariana Martins | Formated README.md in markdown |
-| 30/3 | Bruno Alegria | Updated README.md |
+| 30/3 | Bruno Alegria | Updated README.md |                                                          /// especificar
 | 1/4 | Mariana Martins | Added Architecture description and references |                    /// tipo aqui, eu espcifiquei references
 | 1/4 | Mariana Martins | Created Class Game in Game.cs |
 | 1/4 | Ivan Emidio | Created Class Board in Board.cs |
@@ -20,6 +20,8 @@
 | 1/4 | Ivan Emidio | Updated README.md |
 | 1/4 | Mariana Martins | Created CreatePieces Method in Board Class |
 | 1/4 | Mariana Martins | Created PiecesChar Enumeration in PiecesChar.cs |
+| 2/4 | Mariana Martins | Scripted Render method in Board Class |
+| 2/4 | Mariana Martins | Created unicodeModify method and other getters in Piece class |
 
 ---
 ## Architecture
@@ -46,6 +48,7 @@ Board Game References:
 * Mariana - have an array for the board where we place the pieces, and is read in a for when we want to check is the piece is in use
 #### Ai Code
 #### Open Code
+* [Stack Overflow, How to draw tables](https://stackoverflow.com/questions/856845/how-to-best-way-to-draw-table-in-console-app-c)
 #### Libraries
 * [Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/) 
 * [Markdown docs](https://paperhive.org/help/markdown)

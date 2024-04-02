@@ -11,14 +11,14 @@ namespace GaloDaVelha
         private int height;
         private int width;
         private Piece [] piecesLeft;
-        private Piece [][] board;
+        private Piece [,] board;
 
         public Board()
         {
             height = 4;
             width = 4;
             piecesLeft = new Piece [height*width];
-            board [height][] = new Piece [];
+            board = new Piece [height, width];
             createPieces();
         }
         /// <summary>
@@ -57,9 +57,12 @@ namespace GaloDaVelha
         /// </summary>
         public void Render()
         {
-            foreach(Piece coordinate in board)
+            string strBoard = "____ ____ ____ ____";
+            Console.WriteLine(strBoard);
+            foreach(Piece row in board)
             {
-                Console.WriteLine(coordinate.coordinate);
+                string strBoard = String.Format("|{0,-4}|{1,-4}|{2,-4}|{3,-4}|", row[0].GetUnicoded(), row[1].GetUnicoded(), row[2].GetUnicoded(), row[3].GetUnicoded());
+                Console.WriteLine(strBoard);
             }
         }
     }
