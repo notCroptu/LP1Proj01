@@ -23,19 +23,22 @@
 | 2/4 | Mariana Martins | Scripted Render method in Board Class |
 | 2/4 | Mariana Martins | Created unicodeModify method and other getters in Piece class |
 | 2/4 | Mariana Martins | Updated references in README |
+| 2/4 | Mariana Martins | Created Player Class in Player.cs |
+| 2/4 | Mariana Martins | Added script to Game class loop |
 
 ---
 ## Architecture
 
 > here goes the description (organizations and non trivial algorithms)
 
-    Our project is organized between 4 classes, Game, Board, Player and Piece. Where Game initiates the instances necessary for the program and has the game loop, Board is an object with the state of the game board and all the Piece Objects in it in a Pieces array, Player has the methods necessary for the moves the player can take, and Piece is an object that is instantiated with an enumeration.
+    Our project is organized between 4 classes, Game, Board, Player and Piece. Where Game initiates the instances necessary for the program and has the game loop, Board is an object with the state of the game board and all the Piece Objects in it in a Pieces array, Player has the methods necessary for the moves the player can take, and Piece is an object that is instantiated with an enumeration and has its own string identifier.
 
 > here goes the fluxogram (steps walked through in the program)
 
-flowchart LR
-M(Main) --> G(Game)
-
+```mermaid
+flowchart LR;
+    M(Main) --> G(Game);
+```
 ---
 ## References
 #### Ideas
