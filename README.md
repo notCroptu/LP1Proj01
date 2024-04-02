@@ -22,6 +22,7 @@
 | 1/4 | Mariana Martins | Created PiecesChar Enumeration in PiecesChar.cs |
 | 2/4 | Mariana Martins | Scripted Render method in Board Class |
 | 2/4 | Mariana Martins | Created unicodeModify method and other getters in Piece class |
+| 2/4 | Mariana Martins | Updated references in README |
 
 ---
 ## Architecture
@@ -37,11 +38,6 @@ M(Main) --> G(Game)
 
 ---
 ## References
-Board Game References:
-* https://www.w3schools.com/cs/cs_arrays_multi.php
-* https://www.w3schools.com/cs/cs_classes.php
-* https://www.w3schools.com/cs/cs_constructors.php
-
 #### Ideas
 * Mariana - To have 4 classes for the project, and deal with the window in the Game class.
 * Mariana - use and enumeration with bit by bit to identify pieces
@@ -53,3 +49,6 @@ Board Game References:
 * [Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/) 
 * [Markdown docs](https://paperhive.org/help/markdown)
 * [Mermaid docs](https://mermaid.js.org/syntax/flowchart.html)
+* https://www.w3schools.com/cs/cs_arrays_multi.php
+* https://www.w3schools.com/cs/cs_classes.php
+* https://www.w3schools.com/cs/cs_constructors.php                            // ivan referencia isto sem ser so links bruv
