@@ -25,6 +25,12 @@
 | 2/4 | Mariana Martins | Updated references in README |
 | 2/4 | Mariana Martins | Created Player Class in Player.cs |
 | 2/4 | Mariana Martins | Added script to Game class loop |
+| 3/4 | Mariana Martins | Added player instances to Game.cs and created switchPlayer method to Game.cs |
+| 3/4 | Mariana Martins | Created CheckInput methods in Game.cs |
+| 3/4 | Mariana Martins | Created ConvertInput methods and getters in Player class |
+| 3/4 | Mariana Martins | Created getters in Piece class |
+| 3/4 | Mariana Martins | Added name input in Start method, name variable in Player class and GetName method |
+| 3/4 | Mariana Martins | Edited game loop in Start method to include new methods |
 
 ---
 ## Architecture
