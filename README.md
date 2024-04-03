@@ -9,7 +9,7 @@
 | 29/3 | Mariana Martins | Created git |
 | 29/3 | Mariana Martins | Added solution and project |
 | 29/3 | Mariana Martins | Formated README.md in markdown |
-| 30/3 | Bruno Alegria | Updated README.md |                                                          /// especificar
+| 30/3 | Bruno Alegria | Updated header of README.md |
 | 1/4 | Mariana Martins | Added Architecture description and references |                    /// tipo aqui, eu espcifiquei references
 | 1/4 | Mariana Martins | Created Class Game in Game.cs |
 | 1/4 | Ivan Emidio | Created Class Board in Board.cs |
@@ -31,6 +31,9 @@
 | 3/4 | Mariana Martins | Created getters in Piece class |
 | 3/4 | Mariana Martins | Added name input in Start method, name variable in Player class and GetName method |
 | 3/4 | Mariana Martins | Edited game loop in Start method to include new methods |
+| 3/4 | Bruno Alegria | Created PiecePlacer method in Board.cs|
+| 3/4 | Bruno Alegria | Added the PiecePlacer attributes (piece and coordinates)|
+| 3/4 | Bruno Alegria | Update README.md's change log|
 
 ---
 ## Architecture
