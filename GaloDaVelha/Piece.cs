@@ -39,5 +39,9 @@ namespace GaloDaVelha
         {
             return unicoded;
         }
+        public string GetChars()
+        {
+            return chars;
+        }
     }
 }
