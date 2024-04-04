@@ -34,6 +34,10 @@
 | 3/4 | Bruno Alegria | Created PiecePlacer method in Board.cs|
 | 3/4 | Bruno Alegria | Added the PiecePlacer attributes (piece and coordinates)|
 | 3/4 | Bruno Alegria | Update README.md's change log|
+| 4/4 | Mariana Martins | Edited the PiecePlacer method in board.cs |
+| 4/4 | Mariana Martins | Added getter methods to board class |
+| 4/4 | Mariana Martins | Reordered and added methods to the game loop logic |
+| 4/4 | Mariana Martins | Update README.md's change log|
 
 ---
 ## Architecture

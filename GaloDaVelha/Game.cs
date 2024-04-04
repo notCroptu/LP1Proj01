@@ -9,6 +9,7 @@ namespace GaloDaVelha
         private Player player1;
         private Player player2;
         private Player player;
+        private Player piecePlayer;
         private int playerTurn;
 
         /// <summary>
@@ -32,50 +33,56 @@ namespace GaloDaVelha
             Console.Write("Input player 2's name: ")
             player2 = new Player(Console.ReadLine())
 
+            piecePlayer = player2;
             player = player1;
 
             while (true)
             {
+                // the panel is rendered here
                 panel.Render();
+                //followed by some instructions
                 Console.WriteLine("Commands: exit/*size *colour *shape *hole/*placement     examples: 'big white square nohole' 'A0'")
 
                 // o codigo que ve se um player ganhou deveria estar aqui, ja que o jogo deveria mostrar o render da ultima jogada antes de dar break
 
-                Console.WriteLine("Player please input the next piece to be moved. ")
+                Console.WriteLine($"{player}, please input the next piece to be moved. ")
                 input = Console.ReadLine();
                 input = input.Lower();
 
-                if (input == "exit") break;
-                else
+                while (true)
                 {
-                    player.ConvertPieceInput(input);
-                    if (CheckInput(player.GetLastPieceInput())) return;
-
-                    foreach (Piece piece in panel.piecesLeft)
+                    if (input == "exit") break;
+                    else
                     {
-                        if (player.GetLastPieceInput() == piece.GetChars())
-                        {
-                            
-                            break;
-                        }
+                        // here the input is converted either into a PieceChar or an int -1 (false or true)
+                        player.ConvertPieceInput(input);
+                        //here goes the checker to make sure the input is correct
+                        if (CheckInput(player.GetLastPieceInput())) return;
+                        else break;
                     }
-                    switchPlayer()
                 }
 
-                Console.WriteLine("Player please input the positioning for . ")
+                switchPlayer();
+
+                Console.WriteLine($"{player}, please input the positioning for the piece {ToPieceUnicoded(piecePlayer.GetLastPieceInput())}. ")
                 input = Console.ReadLine();
                 input = input.Lower();
 
-                if (input == "exit") break;
-                else
+                while (true)
                 {
-                    player.ConvertPlaceInput(input);
-                    if (CheckInput(player.GetLastPlaceInput())) return;
-
-                    //here goes the 
-
-                    switchPlayer()
+                    if (input == "exit") break;
+                    else
+                    {
+                        // here the input is converted either into an int[2] or an int -1 (false or true)
+                        player.ConvertPlaceInput(input);
+                        // here goes the checker to make sure the input is correct
+                        if (CheckInput(player.GetLastPlaceInput())) return;
+                        else break;
+                    }
                 }
+
+                //here the piece should be set in panel
+                panel.PiecePlacer(piecePlayer.GetLastPieceInput(), Player.GetLastPlaceInput());
             }
         }
         public void switchPlayer()
@@ -84,29 +91,49 @@ namespace GaloDaVelha
             if (playerTurn == 0)
             {
                 player = player1;
+                piecePlayer = player2;
             }
             else
             {
                 player = player2;
+                piecePlayer = player1;
             }
         }
         public bool CheckInput(PiecesChar input)
         {
+            bool result;
             if (input == -1)
             {
                 Console.WriteLine("Incorrect input.")
-                return true; 
+                result = true;
             }
-            else return false;
+            else result = false;
+            return result;
         }
         public bool CheckInput(Int input)
         {
+            bool result;
             if (input == -1)
             {
                 Console.WriteLine("Incorrect input.")
-                return true; 
+                result = true; 
             }
-            else return false;
+            else result = false;
+            return result;
+        }
+        public string ToPieceUnicoded(PieceChar piecechar)
+        {
+            string result;
+            foreach (Piece piece in panel.GetpiecesLeft())
+            {
+                if (piecechar == piece.GetChars())
+                {
+                    result = piece.GetUnicoded();
+                }
+                else
+                result = "no name"
+            }
+            return result;
         }
     } 
 }

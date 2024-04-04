@@ -92,8 +92,14 @@ namespace GaloDaVelha
                 }
             }
         }
-     
+        public Piece GetpiecesLeft()
+        {
+            return piecesLeft;
+        }
+        public Piece Getboard()
+        {
+            return board;
+        }
     }
-
 }
 
