@@ -39,6 +39,10 @@
 | 4/4 | Mariana Martins | Reordered and added methods to the game loop logic |
 | 4/4 | Mariana Martins | Update README.md's change log |
 | 4/4 | Mariana Martins | Edited ConvertPieceInput and ConvertPlaceInput method in Player class |
+| 4/4 | Mariana Martins | Fixed errors in Game.cs, missing ;, break, {} etc. |
+| 4/4 | Mariana Martins | Fixed errors in Board.cs, missing null check and loop errors |
+| 4/4 | Mariana Martins | Fixed errors in Piece.cs, method name wrong, missing null check |
+| 4/4 | Mariana Martins | Fixed errors in Player.cs, wrong variable called |
 
 ---
 ## Architecture

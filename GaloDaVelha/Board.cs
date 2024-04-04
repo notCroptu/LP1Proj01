@@ -1,6 +1,5 @@
 using System;
 
-
 namespace GaloDaVelha
 {
     /// <summary>
@@ -10,42 +9,42 @@ namespace GaloDaVelha
     {
         private int height;
         private int width;
-        private Piece [] piecesLeft;
-        private Piece [,] board;
+        private Piece[] piecesLeft;
+        private Piece[,] board;
 
         public Board()
         {
             height = 4;
             width = 4;
-            piecesLeft = new Piece [height*width];
-            board = new Piece [height, width];
+            piecesLeft = new Piece[height * width];
+            board = new Piece[height, width];
             createPieces();
         }
+
         /// <summary>
         /// Creates all the pieces of the game inside the array piecesLeft, to be used later to render the board and choose pieces, etc
         /// </summary>
-
         public void createPieces()
         {
-            for (int i = 1; i <= piecesLeft.GetLength(0); i++)
-            { 
-                //  Creates a piece and adds it to piecesLeft
+            for (int i = 0; i < piecesLeft.Length; i++)
+            {
+                // Creates a piece and adds it to piecesLeft
                 piecesLeft[i] = new Piece();
 
-                //  Checks if the i is valid to give each piece their characteristic
-                if ( 0 == i%2 )
+                // Checks if the i is valid to give each piece their characteristic
+                if (i % 2 == 0)
                 {
                     piecesLeft[i].charModify(PiecesChar.BigOrSmall);
                 }
-                if ((0 < i & i <= 2) || (4 < i & i <= 8) || (10 < i & i <= 12) || (16 < i & i <= 18))
+                if ((i > 0 && i <= 2) || (i > 4 && i <= 8) || (i > 10 && i <= 12) || (i > 16 && i <= 18))
                 {
                     piecesLeft[i].charModify(PiecesChar.WhiteOrBlack);
                 }
-                if ((0 < i & i <= 4) || (8 < i & i <= 12))
+                if ((i > 0 && i <= 4) || (i > 8 && i <= 12))
                 {
                     piecesLeft[i].charModify(PiecesChar.CircleOrSquare);
                 }
-                if ( 0 < i & i <= 8 )
+                if (i > 0 && i <= 8)
                 {
                     piecesLeft[i].charModify(PiecesChar.HoleOrNoHole);
                 }
@@ -75,31 +74,31 @@ namespace GaloDaVelha
         /// <param name="coord">This are the (x,y) coordinates of the piece</param>
         public void PiecePlacer(PieceChar _piece, int[] coord)
         {
-            //Runs through all of piecesLeft array
+            // Runs through all of piecesLeft array
             for (int i = 0; i < piecesLeft.Length; i++)
-            
-            {   
-                //Checks if the piece chosen is correspondent to a piece in piecesLeft 
-                if (piecesLeft[i].GetChars() == _piece) 
+            {
+                // Checks if the piece chosen is correspondent to a piece in piecesLeft 
+                if (piecesLeft[i] != null && piecesLeft[i].GetChars() == _piece)
                 {
-                    //Puts the piece at the given coordinates
+                    // Puts the piece at the given coordinates
                     board[coord[0], coord[1]] = piecesLeft[i];
 
-                    //The piece is "marked" as used
+                    // The piece is "marked" as used
                     piecesLeft[i] = null;
 
-                    break; //Exit the loop, which means that the move ends
+                    break; // Exit the loop, which means that the move ends
                 }
             }
         }
-        public Piece GetpiecesLeft()
+
+        public Piece[] GetpiecesLeft()
         {
             return piecesLeft;
         }
-        public Piece Getboard()
+
+        public Piece[,] Getboard()
         {
             return board;
         }
     }
 }
-

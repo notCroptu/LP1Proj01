@@ -17,7 +17,6 @@ namespace GaloDaVelha
         /// </summary>
         public Game()
         {
-            ///Criar aqui as instancias necessarias
             panel = new Board();
             input = "";
             playerTurn = 0;
@@ -28,10 +27,10 @@ namespace GaloDaVelha
         /// </summary>
         public void Start()
         {
-            Console.Write("Input player 1's name: ")
-            player1 = new Player(Console.ReadLine())
-            Console.Write("Input player 2's name: ")
-            player2 = new Player(Console.ReadLine())
+            Console.Write("Input player 1's name: ");
+            player1 = new Player(Console.ReadLine());
+            Console.Write("Input player 2's name: ");
+            player2 = new Player(Console.ReadLine());
 
             piecePlayer = player2;
             player = player1;
@@ -41,13 +40,13 @@ namespace GaloDaVelha
                 // the panel is rendered here
                 panel.Render();
                 //followed by some instructions
-                Console.WriteLine("Commands: exit/*size *colour *shape *hole/*placement     examples: 'big white square nohole' 'A0'")
+                Console.WriteLine("Commands: exit/*size *colour *shape *hole/*placement     examples: 'big white square nohole' 'A0'");
 
                 // o codigo que ve se um player ganhou deveria estar aqui, ja que o jogo deveria mostrar o render da ultima jogada antes de dar break
 
-                Console.WriteLine($"{player}, please input the next piece to be moved. ")
+                Console.WriteLine($"{player}, please input the next piece to be moved. ");
                 input = Console.ReadLine();
-                input = input.Lower();
+                input = input.ToLower();
 
                 while (true)
                 {
@@ -64,9 +63,9 @@ namespace GaloDaVelha
 
                 switchPlayer();
 
-                Console.WriteLine($"{player}, please input the positioning for the piece {ToPieceUnicoded(piecePlayer.GetLastPieceInput())}. ")
+                Console.WriteLine($"{player}, please input the positioning for the piece {ToPieceUnicoded(piecePlayer.GetLastPieceInput())}. ");
                 input = Console.ReadLine();
-                input = input.Lower();
+                input = input.ToLower();
 
                 while (true)
                 {
@@ -82,9 +81,10 @@ namespace GaloDaVelha
                 }
 
                 //here the piece should be set in panel
-                panel.PiecePlacer(piecePlayer.GetLastPieceInput(), Player.GetLastPlaceInput());
+                panel.PiecePlacer(piecePlayer.GetLastPieceInput(), player.GetLastPlaceInput());
             }
         }
+
         public void switchPlayer()
         {
             playerTurn ^= 1;
@@ -99,39 +99,41 @@ namespace GaloDaVelha
                 piecePlayer = player1;
             }
         }
-        public bool CheckInput(PiecesChar input)
+
+        public bool CheckInput(PieceChar input)
         {
             bool result;
             if (input == -1)
             {
-                Console.WriteLine("Incorrect input.")
+                Console.WriteLine("Incorrect input.");
                 result = true;
             }
             else result = false;
             return result;
         }
-        public bool CheckInput(Int[] input)
+
+        public bool CheckInput(int[] input)
         {
             bool result;
             if (input[0] == -1)
             {
-                Console.WriteLine("Incorrect input.")
+                Console.WriteLine("Incorrect input.");
                 result = true; 
             }
             else result = false;
             return result;
         }
+
         public string ToPieceUnicoded(PieceChar piecechar)
         {
-            string result;
+            string result = "no name"; // default value
             foreach (Piece piece in panel.GetpiecesLeft())
             {
                 if (piecechar == piece.GetChars())
                 {
                     result = piece.GetUnicoded();
+                    break; // Break the loop once the piece is found
                 }
-                else
-                result = "no name"
             }
             return result;
         }
