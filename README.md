@@ -43,6 +43,9 @@
 | 4/4 | Mariana Martins | Fixed errors in Board.cs, missing null check and loop errors |
 | 4/4 | Mariana Martins | Fixed errors in Piece.cs, method name wrong, missing null check |
 | 4/4 | Mariana Martins | Fixed errors in Player.cs, wrong variable called |
+| 4/4 | Bruno Alegria | Modified methods GetName, GetLastPieceInput and GetLastPlaceInput to lambdas in Player.cs |
+| 4/4 | Bruno Alegria | Modified methods GetUnicoded and GetChars to lambdas in Piece.cs |
+
 
 ---
 ## Architecture
