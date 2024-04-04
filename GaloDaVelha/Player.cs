@@ -59,17 +59,9 @@ namespace GaloDaVelha
             if (error == true) LastPlaceInput[0] = -1;
             else LastPlaceInput = pos;
         }
-        public string GetName()
-        {
-            return name;
-        }
-        public PieceChar GetLastPieceInput()
-        {
-            return LastPieceInput;
-        }
-        public int [] GetLastPlaceInput()
-        {
-            return LastPlaceInput;
-        }
+        public string GetName() => name;
+        public PieceChar GetLastPieceInput() => LastPieceInput;
+        public int [] GetLastPlaceInput() => LastPlaceInput;
+        
     }
 }
