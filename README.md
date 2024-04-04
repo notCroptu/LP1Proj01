@@ -45,7 +45,7 @@
 | 4/4 | Mariana Martins | Fixed errors in Player.cs, wrong variable called |
 | 4/4 | Bruno Alegria | Modified methods GetName, GetLastPieceInput and GetLastPlaceInput to lambdas in Player.cs |
 | 4/4 | Bruno Alegria | Modified methods GetUnicoded and GetChars to lambdas in Piece.cs |
-
+| 4/4 | Mariana Martins | Edited Render method in Board class |
 
 ---
 ## Architecture

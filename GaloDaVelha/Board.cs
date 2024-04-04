@@ -56,13 +56,23 @@ namespace GaloDaVelha
         /// </summary>
         public void Render()
         {
-            string strBoard = "____ ____ ____ ____ ____";
-            Console.WriteLine(strBoard);
-            String.Format("|{0,-4}|{1,-4}|{2,-4}|{3,-4}|{4,-4}|", " ", "A", "B", "C", "D");
-            for (int i = 0; i < board.Length; i++)
+            Console.WriteLine("____ ____ ____ ____ ____");
+            Console.WriteLine("|    | A  | B  | C  | D  |");
+            for (int i = 0; i < height; i++)
             {
-                string strBoard = String.Format("|{0,-4}|{1,-4}|{2,-4}|{3,-4}|{4,-4}|", i.ToString(), row[0].GetUnicoded(), row[1].GetUnicoded(), row[2].GetUnicoded(), row[3].GetUnicoded());
-                Console.WriteLine(strBoard);
+                Console.Write($"| {i}  |");
+                for (int j = 0; j < width; j++)
+                {
+                    if (board[i, j] != null)
+                    {
+                        Console.Write($" {board[i, j].GetUnicoded()} |");
+                    }
+                    else
+                    {
+                        Console.Write("    |");
+                    }
+                }
+                Console.WriteLine();
             }
         }
 
