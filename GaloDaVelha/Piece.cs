@@ -37,14 +37,9 @@ namespace GaloDaVelha
             unicoded = unicodedBuilder;
         }
 
-        public string GetUnicoded()
-        {
-            return unicoded;
-        }
+        public string GetUnicoded() => unicoded;
+        
+        public PiecesChar GetChars() => chars;
 
-        public PiecesChar GetChars()
-        {
-            return chars;
-        }
     }
 }
