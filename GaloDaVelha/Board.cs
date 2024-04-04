@@ -24,6 +24,7 @@ namespace GaloDaVelha
         /// <summary>
         /// Creates all the pieces of the game inside the array piecesLeft, to be used later to render the board and choose pieces, etc
         /// </summary>
+
         public void createPieces()
         {
             for (int i = 1; i <= piecesLeft.GetLength(0); i++)
@@ -51,7 +52,6 @@ namespace GaloDaVelha
             }
         }
 
-
         /// <summary>
         /// Visual Representation of the board
         /// </summary>
@@ -66,36 +66,29 @@ namespace GaloDaVelha
                 Console.WriteLine(strBoard);
             }
         }
+
         /// <summary>
         /// This method accepts a piece chosen by a player and its coordinates,
         /// then puts the piece at those coordinates if they are free.
         /// </summary>
         /// <param name="_piece">This represent the chosen piece</param>
         /// <param name="coord">This are the (x,y) coordinates of the piece</param>
-        public void PiecePlacer(Piece _piece, int[] coord)
+        public void PiecePlacer(PieceChar _piece, int[] coord)
         {
-            if (coord.Length != 2) //Guarantees that the coordinates are correct
-            {
-                Console.WriteLine("Need a valid (x,y) position to continue!");
-                return;
-            }
+            //Runs through all of piecesLeft array
+            for (int i = 0; i < piecesLeft.Length; i++)
             
             {   
-                //Runs through all of piecesLeft array
-                for (int i = 0; i < piecesLeft.Length; i++)
-                
-                {   
-                    //Checks if the piece chosen is correspondent to a piece in piecesLeft 
-                    if (piecesLeft[i] == _piece) 
-                    {
-                        //Puts the piece at the given coordinates
-                        board[coord[0], coord[1]] = _piece;
+                //Checks if the piece chosen is correspondent to a piece in piecesLeft 
+                if (piecesLeft[i].GetChars() == _piece) 
+                {
+                    //Puts the piece at the given coordinates
+                    board[coord[0], coord[1]] = piecesLeft[i];
 
-                        //The piece is "marked" as used
-                        piecesLeft[i] = null;
+                    //The piece is "marked" as used
+                    piecesLeft[i] = null;
 
-                        break; //Exit the loop, which means that the move ends
-                    }
+                    break; //Exit the loop, which means that the move ends
                 }
             }
         }
