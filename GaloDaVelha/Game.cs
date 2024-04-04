@@ -110,10 +110,10 @@ namespace GaloDaVelha
             else result = false;
             return result;
         }
-        public bool CheckInput(Int input)
+        public bool CheckInput(Int[] input)
         {
             bool result;
-            if (input == -1)
+            if (input[0] == -1)
             {
                 Console.WriteLine("Incorrect input.")
                 result = true; 

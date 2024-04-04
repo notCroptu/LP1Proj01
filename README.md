@@ -38,7 +38,7 @@
 | 4/4 | Mariana Martins | Added getter methods to board class |
 | 4/4 | Mariana Martins | Reordered and added methods to the game loop logic |
 | 4/4 | Mariana Martins | Update README.md's change log |
-| 4/4 | Mariana Martins | Edited ConvertPieceInput method in Player class |
+| 4/4 | Mariana Martins | Edited ConvertPieceInput and ConvertPlaceInput method in Player class |
 
 ---
 ## Architecture

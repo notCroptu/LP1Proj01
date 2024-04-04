@@ -42,7 +42,22 @@ namespace GaloDaVelha
         }
         public void ConvertPlaceInput(string input)
         {
-            
+            int [] pos = new int[2];
+            bool error = false;
+
+            if (input.Length != 2) error = true;
+
+            if (input[0] == a) pos[0] = 0;
+            else if (input[0] == b) pos[0] = 1;
+            else if (input[0] == c) pos[0] = 2;
+            else if (input[0] == d) pos[0] = 3;
+            else error = true;
+
+            if (0 >= ((int) input[1]) || ((int) input[1]) <= 3) pos[1] = (int) input[1];
+            else error = true;
+
+            if (error == true) LastPlaceInput[0] = -1;
+            else LastPlaceInput = pos;
         }
         public string GetName()
         {
