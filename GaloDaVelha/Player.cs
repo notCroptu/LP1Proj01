@@ -110,7 +110,7 @@ namespace GaloDaVelha
                         else error = true;
                     }
                 }
-
+                
                 if (error) Console.WriteLine("Wrong wording. Try again. ");
             }
             else
