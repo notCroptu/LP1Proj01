@@ -40,16 +40,17 @@ namespace GaloDaVelha
                 // the panel is rendered here
                 panel.Render();
                 //followed by some instructions
-                Console.WriteLine("Commands: exit/*size *colour *shape *hole/*placement     examples: 'big white square nohole' 'A0'");
+                Console.WriteLine("Commands: exit/*size *colour *shape *hole/*placement");
+                Console.WriteLine("examples: 'big white square nohole' 'A0'")
 
                 // o codigo que ve se um player ganhou deveria estar aqui, ja que o jogo deveria mostrar o render da ultima jogada antes de dar break
 
-                Console.WriteLine($"{player}, please input the next piece to be moved. ");
-                input = Console.ReadLine();
-                input = input.ToLower();
-
                 while (true)
                 {
+                    Console.WriteLine($"{player.GetName()}, please input the next piece to be moved. ");
+                    input = Console.ReadLine();
+                    input = input.ToLower();
+
                     if (input == "exit") break;
                     else
                     {
@@ -63,12 +64,12 @@ namespace GaloDaVelha
 
                 switchPlayer();
 
-                Console.WriteLine($"{player}, please input the positioning for the piece {ToPieceUnicoded(piecePlayer.GetLastPieceInput())}. ");
-                input = Console.ReadLine();
-                input = input.ToLower();
-
                 while (true)
                 {
+                    Console.WriteLine($"{player.GetName()}, please input the positioning for the piece {ToPieceUnicoded(piecePlayer.GetLastPieceInput())}. ");
+                    input = Console.ReadLine();
+                    input = input.ToLower();
+                    
                     if (input == "exit") break;
                     else
                     {

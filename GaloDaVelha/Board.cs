@@ -58,7 +58,7 @@ namespace GaloDaVelha
         /// </summary>
         public void Render()
         {
-            Console.WriteLine("____ ____ ____ ____ ____");
+            Console.WriteLine(" ____ ____ ____ ____ ____");
             Console.WriteLine("|    | A  | B  | C  | D  |");
             for (int i = 0; i < height; i++)
             {
