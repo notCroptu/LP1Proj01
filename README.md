@@ -57,6 +57,8 @@
 | 5/4 | Mariana Martins | Edited CheckInput methods, to include checking for availability of piece and placement |
 | 5/4 | Mariana Martins | Fixed CreatePieces method in board, the ifs were giving true at wrong times |
 | 5/4 | Mariana Martins | Fixed CheckInput for loop in Game class |
+| 5/4 | Mariana Martins | Added a null check in CheckInput in Game class, and changed spacing between renderings in game loop 
+| 5/4 | Mariana Martins | Edited ConvertPieceInput in Player class |
 
 ---
 ## Architecture
