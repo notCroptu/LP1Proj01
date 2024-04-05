@@ -40,20 +40,21 @@ namespace GaloDaVelha
                 {
                     piecesLeft[i].charModify(PiecesChar.BigOrSmall);
                 }
-                if ((i > 0 && i <= 2) || (i > 4 && i <= 8) || (i > 10 && i <= 12) || (i > 16 && i <= 18))
+                if ((i >= 0 && i < 2) || (i >= 4 && i < 6) || (i >= 8 && i < 10) || (i >= 12 && i < 14) || (i >= 16 && i < 18))
                 {
                     piecesLeft[i].charModify(PiecesChar.WhiteOrBlack);
                 }
-                if ((i > 0 && i <= 4) || (i > 8 && i <= 12))
+                if ((i >= 0 && i < 4) || (i >= 8 && i < 12))
                 {
                     piecesLeft[i].charModify(PiecesChar.CircleOrSquare);
                 }
-                if (i > 0 && i <= 8)
+                if (i >= 0 && i < 8)
                 {
                     piecesLeft[i].charModify(PiecesChar.HoleOrNoHole);
                 }
 
                 piecesLeft[i].unicodedModify();
+                Console.WriteLine(piecesLeft[i].GetUnicoded());
             }
         }
 
@@ -83,7 +84,7 @@ namespace GaloDaVelha
         }
         public void ShowAvailable()
         {
-            
+
         }
 
         /// <summary>

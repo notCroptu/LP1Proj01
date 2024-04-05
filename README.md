@@ -55,6 +55,8 @@
 | 5/4 | Mariana Martins | Added error messages in ConvertInput methods and edited game loop |
 | 5/4 | Bruno Alegria | Modified class Board description and transformed methods GetpiecesLeft and Getboard to lambdas in Board.cs |
 | 5/4 | Mariana Martins | Edited CheckInput methods, to include checking for availability of piece and placement |
+| 5/4 | Mariana Martins | Fixed CreatePieces method in board, the ifs were giving true at wrong times |
+| 5/4 | Mariana Martins | Fixed CheckInput for loop in Game class |
 
 ---
 ## Architecture

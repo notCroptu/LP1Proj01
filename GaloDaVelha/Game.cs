@@ -105,7 +105,8 @@ namespace GaloDaVelha
 
         public bool CheckInput(PiecesChar input)
         {
-            bool hasError;
+            bool hasError = false;
+
             if (input == PiecesChar.Invalid)
             {
                 hasError = true;
@@ -117,21 +118,23 @@ namespace GaloDaVelha
                     if (input == piece.GetChars())
                     {
                         hasError = false;
+                        break;
                     }
                     else
                     {
-                        Console.WriteLine("This Piece has already been played. Try again. ");
                         hasError = true;
                     }
                 }
+                if ( hasError == true ) Console.WriteLine("This Piece has already been played. Try again. ");
             }
         
-            return result;
+            return hasError;
         }
 
         public bool CheckInput(int[] input)
         {
-            bool hasError;
+            bool hasError = false;
+
             if (input[0] == -1)
             {
                 hasError = true; 
@@ -148,7 +151,7 @@ namespace GaloDaVelha
                     hasError = true;
                 }
             }
-            return result;
+            return hasError;
         }
 
         public string ToPieceUnicoded(PiecesChar piecechar)
