@@ -49,6 +49,7 @@
 | 5/4 | Ivan Emidio | Fixed errors, PieceChar -> PiecesChar |
 | 5/4 | Mariana Martins | Edited CreatePieces method in Board class |
 | 5/4 | Mariana Martins | Added Invalid enum in PiecesChar and applied in ConvertInput and CheckInput methods |
+| 5/4 | Mariana Martins | Edited ConvertInput methods |
 
 ---
 ## Architecture
