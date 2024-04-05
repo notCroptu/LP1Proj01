@@ -53,7 +53,7 @@ namespace GaloDaVelha
                     if (input == "exit") break;
                     else
                     {
-                        // here the input is converted either into a PieceChar or an int -1 (false or true)
+                        // here the input is converted either into a PiecesChar or an int -1 (false or true)
                         player.ConvertPieceInput(input);
                         //here goes the checker to make sure the input is correct
                         if (CheckInput(player.GetLastPieceInput())) return;
@@ -100,10 +100,10 @@ namespace GaloDaVelha
             }
         }
 
-        public bool CheckInput(PieceChar input)
+        public bool CheckInput(PiecesChar input)
         {
             bool result;
-            if (input == -1)
+            if (input == PiecesChar.Invalid)
             {
                 Console.WriteLine("Incorrect input.");
                 result = true;
@@ -124,7 +124,7 @@ namespace GaloDaVelha
             return result;
         }
 
-        public string ToPieceUnicoded(PieceChar piecechar)
+        public string ToPieceUnicoded(PiecesChar piecechar)
         {
             string result = "no name"; // default value
             foreach (Piece piece in panel.GetpiecesLeft())

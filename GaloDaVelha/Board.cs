@@ -48,6 +48,8 @@ namespace GaloDaVelha
                 {
                     piecesLeft[i].charModify(PiecesChar.HoleOrNoHole);
                 }
+
+                piecesLeft[i].unicodedModify();
             }
         }
 
@@ -82,7 +84,7 @@ namespace GaloDaVelha
         /// </summary>
         /// <param name="_piece">This represent the chosen piece</param>
         /// <param name="coord">This are the (x,y) coordinates of the piece</param>
-        public void PiecePlacer(PieceChar _piece, int[] coord)
+        public void PiecePlacer(PiecesChar _piece, int[] coord)
         {
             // Runs through all of piecesLeft array
             for (int i = 0; i < piecesLeft.Length; i++)

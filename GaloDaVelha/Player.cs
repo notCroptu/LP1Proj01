@@ -6,7 +6,7 @@ namespace GaloDaVelha
 {
     public class Player
     {
-        private PieceChar LastPieceInput;
+        private PiecesChar LastPieceInput;
         private int [] LastPlaceInput;
         private string name;
         public Player(string _name)
@@ -18,7 +18,7 @@ namespace GaloDaVelha
         public void ConvertPieceInput(string input)
         {
             string[] words = input.Split(' ');
-            PieceChar chars = 0;
+            PiecesChar chars = 0;
             bool error = false;
 
             if (words[0] == "big" || words[0] == "b") chars |= PiecesChar.BigOrSmall;
@@ -37,7 +37,7 @@ namespace GaloDaVelha
             else if (words[3] == "nohole" || words[3] == "n") chars &= ~PiecesChar.HoleOrNoHole;
             else error = true;
 
-            if (error == true) LastPieceInput = -1;
+            if (error == true) LastPieceInput = PiecesChar.Invalid;
             else LastPieceInput = chars;
         }
         public void ConvertPlaceInput(string input)
@@ -60,7 +60,7 @@ namespace GaloDaVelha
             else LastPlaceInput = pos;
         }
         public string GetName() => name;
-        public PieceChar GetLastPieceInput() => LastPieceInput;
+        public PiecesChar GetLastPieceInput() => LastPieceInput;
         public int [] GetLastPlaceInput() => LastPlaceInput;
         
     }
