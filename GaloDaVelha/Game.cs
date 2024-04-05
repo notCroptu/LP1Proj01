@@ -37,11 +37,13 @@ namespace GaloDaVelha
 
             while (true)
             {
+                // Show available pieces in panel.piecesleft
+                panel.ShowAvailable();
                 // the panel is rendered here
                 panel.Render();
                 //followed by some instructions
                 Console.WriteLine("Commands: exit/*size *colour *shape *hole/*placement");
-                Console.WriteLine("examples: 'big white square nohole' 'A0'")
+                Console.WriteLine("examples: 'big white square nohole' 'A0'");
 
                 // o codigo que ve se um player ganhou deveria estar aqui, ja que o jogo deveria mostrar o render da ultima jogada antes de dar break
 
@@ -57,10 +59,10 @@ namespace GaloDaVelha
                         // here the input is converted either into a PiecesChar or an int -1 (false or true)
                         player.ConvertPieceInput(input);
                         //here goes the checker to make sure the input is correct
-                        if (CheckInput(player.GetLastPieceInput())) return;
-                        else break;
+                        if (!CheckInput(player.GetLastPieceInput())) break;
                     }
                 }
+                if (input == "exit") break;
 
                 switchPlayer();
 
@@ -69,17 +71,17 @@ namespace GaloDaVelha
                     Console.WriteLine($"{player.GetName()}, please input the positioning for the piece {ToPieceUnicoded(piecePlayer.GetLastPieceInput())}. ");
                     input = Console.ReadLine();
                     input = input.ToLower();
-                    
+
                     if (input == "exit") break;
                     else
                     {
                         // here the input is converted either into an int[2] or an int -1 (false or true)
                         player.ConvertPlaceInput(input);
                         // here goes the checker to make sure the input is correct
-                        if (CheckInput(player.GetLastPlaceInput())) return;
-                        else break;
+                        if (!CheckInput(player.GetLastPlaceInput())) break;
                     }
                 }
+                if (input == "exit") break;
 
                 //here the piece should be set in panel
                 panel.PiecePlacer(piecePlayer.GetLastPieceInput(), player.GetLastPlaceInput());

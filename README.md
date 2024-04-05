@@ -50,6 +50,8 @@
 | 5/4 | Mariana Martins | Edited CreatePieces method in Board class |
 | 5/4 | Mariana Martins | Added Invalid enum in PiecesChar and applied in ConvertInput and CheckInput methods |
 | 5/4 | Mariana Martins | Edited ConvertInput methods to add flexibitlity to input, and added XML documentation |
+| 5/4 | Mariana Martins | Created ShowAvailable method in Board class |
+| 5/4 | Mariana Martins | Edited issues with ConvertInput Methods and Game loop method in Player Game class |
 
 ---
 ## Architecture

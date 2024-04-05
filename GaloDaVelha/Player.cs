@@ -32,17 +32,17 @@ namespace GaloDaVelha
             PiecesChar chars = 0;
             bool error = false;
 
-            if (input.Length == 4)
+            if (words.Length == 4)
             {
                 foreach (string word in words)
                 {
-                    if (word == "big" || word == "b") 
+                    if (word == "big" || word == "bi") 
                     {
                         chars |= PiecesChar.BigOrSmall;
                         error = false;
                         break;
                     }
-                    else if (word == "small" || word == "s")
+                    else if (word == "small" || word == "sm")
                     {
                         chars &= ~PiecesChar.BigOrSmall;
                         error = false;
@@ -61,7 +61,7 @@ namespace GaloDaVelha
                             error = false;
                             break;
                         }
-                        else if (word == "black" || word == "b")
+                        else if (word == "black" || word == "bl")
                         {
                             chars &= ~PiecesChar.WhiteOrBlack;
                             error = false;
@@ -81,7 +81,7 @@ namespace GaloDaVelha
                             error = false;
                             break;
                         }
-                        else if (word == "square" || word == "s")
+                        else if (word == "square" || word == "sq")
                         {
                             chars &= ~PiecesChar.CircleOrSquare;
                             error = false;
@@ -135,16 +135,18 @@ namespace GaloDaVelha
 
             if (input.Length == 2)
             {
-                if (input[0] == 'a') pos[0] = 0;
-                else if (input[0] == 'b') pos[0] = 1;
-                else if (input[0] == 'c') pos[0] = 2;
-                else if (input[0] == 'd') pos[0] = 3;
+                if (input[0] == 'a') pos[1] = 0;
+                else if (input[0] == 'b') pos[1] = 1;
+                else if (input[0] == 'c') pos[1] = 2;
+                else if (input[0] == 'd') pos[1] = 3;
                 else error = true;
 
-                if (0 >= ((int) input[1]) || ((int) input[1]) <= 3) pos[1] = (int) input[1];
+                if (0 <= ((int) input[1]) || ((int) input[1]) <= 3) pos[0] = int.Parse(input[1].ToString());
                 else error = true;
             }
             else error = true;
+
+            Console.WriteLine($"This is x and y {pos[0]} {pos[1]}");
 
             if (error == true) LastPlaceInput[0] = -1;
             else LastPlaceInput = pos;

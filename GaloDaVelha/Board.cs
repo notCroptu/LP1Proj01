@@ -77,6 +77,10 @@ namespace GaloDaVelha
                 Console.WriteLine();
             }
         }
+        public void ShowAvailable()
+        {
+            
+        }
 
         /// <summary>
         /// This method accepts a piece chosen by a player and its coordinates,
