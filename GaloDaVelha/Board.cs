@@ -54,7 +54,6 @@ namespace GaloDaVelha
                 }
 
                 piecesLeft[i].unicodedModify();
-                Console.WriteLine(piecesLeft[i].GetUnicoded());
             }
         }
 
@@ -63,27 +62,51 @@ namespace GaloDaVelha
         /// </summary>
         public void Render()
         {
-            Console.WriteLine(" ____ ____ ____ ____ ____");
-            Console.WriteLine("|    | A  | B  | C  | D  |");
+            Console.WriteLine(" ___ _____ _____ _____ _____");
+            Console.WriteLine("|   |  A  |  B  |  C  |  D  |");
             for (int i = 0; i < height; i++)
             {
-                Console.Write($"| {i}  |");
+                Console.Write($"| {i} |");
                 for (int j = 0; j < width; j++)
                 {
                     if (board[i, j] != null)
                     {
-                        Console.Write($" {board[i, j].GetUnicoded()} |");
+                        Console.Write($"{board[i, j].GetUnicoded()}|");
                     }
                     else
                     {
-                        Console.Write("    |");
+                        Console.Write("     |");
                     }
                 }
                 Console.WriteLine();
             }
         }
+        /// <summary>
+        /// This method makes the pieces available show on the screen. If the
+        /// chosen piece isn't null, then it will be added to a string that is
+        /// printed, showing the players what pieces are available. If the piece
+        /// chosen is considered as "already used" (null) then it won't be added
+        /// to the string and consequently won't appear on screen.
+        /// </summary>
         public void ShowAvailable()
         {
+            string pieces = ""; //String that will be used to store the available pieces
+
+            for (int i = 0; i < 8; i++)
+            {
+                foreach (Piece piece in piecesLeft) //Goes through the list of pieces
+                {
+                    if (piece != null) //Verifies that the piece as not been used
+                    {
+                        pieces += piece; //Adds the piece to the string initialized earlier
+
+                        //Prints the available pieces
+                        Console.WriteLine("Pieces available: ");
+                        Console.WriteLine($"${pieces} |"); 
+                    }    
+                
+                }
+            }
 
         }
 
