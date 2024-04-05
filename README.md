@@ -52,6 +52,7 @@
 | 5/4 | Mariana Martins | Edited ConvertInput methods to add flexibitlity to input, and added XML documentation |
 | 5/4 | Mariana Martins | Created ShowAvailable method in Board class |
 | 5/4 | Mariana Martins | Edited issues with ConvertInput Methods and Game loop method in Player Game class |
+| 5/4 | Mariana Martins | Added error messages in ConvertInput methods and edited game loop |
 
 ---
 ## Architecture
