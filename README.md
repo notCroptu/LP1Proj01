@@ -62,6 +62,8 @@
 | 5/4 | Bruno Alegria | Added a way to print the available pieces to ShowAvailable in Board.cs |
 | 5/4 | Bruno Alegria | Added XML documentation and comments to ShowAvailable in Board.cs |
 | 5/4 | Mariana Martins | Created CheckWin method in board class and included it in the game loop |
+| 5/4 | Mariana Martins | Edited ShowAvailable in Board.cs |
+| 5/4 | Mariana Martins | Added for loop to check for a horizontal win in WinChecker in Board.cs |
 
 ---
 ## Architecture

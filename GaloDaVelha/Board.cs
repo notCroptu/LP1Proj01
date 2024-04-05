@@ -90,24 +90,29 @@ namespace GaloDaVelha
         /// </summary>
         public void ShowAvailable()
         {
-            string pieces = ""; //String that will be used to store the available pieces
+            Console.WriteLine("Available Pieces: ");
 
+            Console.Write("|");
             for (int i = 0; i < 8; i++)
             {
-                foreach (Piece piece in piecesLeft) //Goes through the list of pieces
+                if (piecesLeft[i] != null) //Verifies that the piece as not been used
                 {
-                    if (piece != null) //Verifies that the piece as not been used
-                    {
-                        pieces += piece; //Adds the piece to the string initialized earlier
-
-                        //Prints the available pieces
-                        Console.WriteLine("Pieces available: ");
-                        Console.WriteLine($"${pieces} |"); 
-                    }    
-                
-                }
+                    //Prints the available pieces
+                    Console.Write($"{piecesLeft[i].GetUnicoded()}|");
+                }    
             }
+            Console.WriteLine();
 
+            Console.Write("|");
+            for (int i = 0; i < 8; i++)
+            {
+                if (piecesLeft[i] != null) //Verifies that the piece as not been used
+                {
+                    //Prints the available pieces
+                    Console.Write($"{piecesLeft[i].GetUnicoded()}|");
+                }    
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -137,7 +142,32 @@ namespace GaloDaVelha
 
         public bool CheckWin(int[] input)
         {
+            bool winH;
+
+            // this for checks for a horizontal line with the same flags
+            for (int i = 0; i < piecesLeft[input[0]].Length; i++)
+            {
+                winH = true;
+
+                // here the ifs are separated for the method to be more readable
+                if ( i != input[1] )
+                {
+                    if ( piecesLeft[input[0]][input[1]].GetChars() & piecesLeft[input[0]][i].GetChars() == 0 )
+                    {
+                        winH = false;
+                        break;
+                    }
+                    else if ( ~piecesLeft[input[0]][input[1]].GetChars() & ~piecesLeft[input[0]][i].GetChars() == 0 )
+                    {
+                        winH = false;
+                        break;
+                    }
+                }
+            }
+
             
+
+            return win;
         }
 
         public Piece[] GetpiecesLeft() => piecesLeft;

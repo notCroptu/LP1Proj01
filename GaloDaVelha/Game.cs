@@ -50,7 +50,7 @@ namespace GaloDaVelha
                 // o codigo que ve se um player ganhou deveria estar aqui, ja que o jogo deveria mostrar o render da ultima jogada antes de dar break
                 if (panel.CheckWin(player.GetLastPlaceInput()))
                 {
-                    Console.WriteLine($"{player.GetName()} is the Winner!")
+                    Console.WriteLine($"{player.GetName()} is the Winner!");
                     break;
                 }
 
