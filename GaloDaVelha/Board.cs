@@ -3,7 +3,10 @@ using System;
 namespace GaloDaVelha
 {
     /// <summary>
-    /// Making of the board
+    /// Configuration of the board, firstly defines its dimensions, then creates
+    /// the pieces, the visual representation of the board and shows what positions
+    /// are available. Lastly it places the pieces chosen by the players on the 
+    /// coordinates they have determined.
     /// </summary>
     public class Board
     {
@@ -22,7 +25,8 @@ namespace GaloDaVelha
         }
 
         /// <summary>
-        /// Creates all the pieces of the game inside the array piecesLeft, to be used later to render the board and choose pieces, etc
+        /// Creates all the pieces of the game inside the array piecesLeft, 
+        /// to be used later to render the board and choose pieces, etc
         /// </summary>
         public void createPieces()
         {
@@ -107,14 +111,9 @@ namespace GaloDaVelha
             }
         }
 
-        public Piece[] GetpiecesLeft()
-        {
-            return piecesLeft;
-        }
+        public Piece[] GetpiecesLeft() => piecesLeft;
 
-        public Piece[,] Getboard()
-        {
-            return board;
-        }
+        public Piece[,] Getboard() => board;
+        
     }
 }
