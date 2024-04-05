@@ -59,6 +59,8 @@
 | 5/4 | Mariana Martins | Fixed CheckInput for loop in Game class |
 | 5/4 | Mariana Martins | Added a null check in CheckInput in Game class, and changed spacing between renderings in game loop 
 | 5/4 | Mariana Martins | Edited ConvertPieceInput in Player class |
+| 5/4 | Bruno Alegria | Added a way to print the available pieces to ShowAvailable in Board.cs |
+| 5/4 | Bruno Alegria | Added XML documentation and comments to ShowAvailable in Board.cs |
 
 ---
 ## Architecture
