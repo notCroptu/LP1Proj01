@@ -105,23 +105,49 @@ namespace GaloDaVelha
 
         public bool CheckInput(PiecesChar input)
         {
-            bool result;
+            bool hasError;
             if (input == PiecesChar.Invalid)
             {
-                result = true;
+                hasError = true;
             }
-            else result = false;
+            else
+            {
+                foreach (Piece piece in panel.GetpiecesLeft())
+                {
+                    if (input == piece.GetChars())
+                    {
+                        hasError = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("This Piece has already been played. Try again. ");
+                        hasError = true;
+                    }
+                }
+            }
+        
             return result;
         }
 
         public bool CheckInput(int[] input)
         {
-            bool result;
+            bool hasError;
             if (input[0] == -1)
             {
-                result = true; 
+                hasError = true; 
             }
-            else result = false;
+            else
+            {
+                if (panel.Getboard()[input[0], input[1]] == null)
+                {
+                    hasError = false;
+                }
+                else
+                {
+                    Console.WriteLine("This Placement already has a piece in it. Try again. ");
+                    hasError = true;
+                }
+            }
             return result;
         }
 
