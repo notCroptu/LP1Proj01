@@ -61,6 +61,7 @@
 | 5/4 | Mariana Martins | Edited ConvertPieceInput in Player class |
 | 5/4 | Bruno Alegria | Added a way to print the available pieces to ShowAvailable in Board.cs |
 | 5/4 | Bruno Alegria | Added XML documentation and comments to ShowAvailable in Board.cs |
+| 5/4 | Mariana Martins | Created CheckWin method in board class and included it in the game loop |
 
 ---
 ## Architecture

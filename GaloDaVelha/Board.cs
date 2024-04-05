@@ -135,6 +135,11 @@ namespace GaloDaVelha
             }
         }
 
+        public bool CheckWin(int[] input)
+        {
+            
+        }
+
         public Piece[] GetpiecesLeft() => piecesLeft;
 
         public Piece[,] Getboard() => board;
