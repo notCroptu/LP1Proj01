@@ -110,8 +110,14 @@ namespace GaloDaVelha
                         else error = true;
                     }
                 }
+
+                if (error) Console.WriteLine("Wrong wording. Try again. ");
             }
-            else error = true;
+            else
+            {
+                Console.WriteLine("Wrong amount of words or incorrect spacing. Try again. ");
+                error = true;
+            }
 
             if (error == true) LastPieceInput = PiecesChar.Invalid;
             else LastPieceInput = chars;
@@ -139,12 +145,24 @@ namespace GaloDaVelha
                 else if (input[0] == 'b') pos[1] = 1;
                 else if (input[0] == 'c') pos[1] = 2;
                 else if (input[0] == 'd') pos[1] = 3;
-                else error = true;
+                else 
+                {
+                    Console.WriteLine("Wrong vertical input. Try again.");
+                    error = true;
+                }
 
                 if (0 <= ((int) input[1]) || ((int) input[1]) <= 3) pos[0] = int.Parse(input[1].ToString());
-                else error = true;
+                else
+                {
+                    Console.WriteLine("Wrong horizontal input. Try again.");
+                    error = true;
+                }
             }
-            else error = true;
+            else
+            {
+                Console.WriteLine("Wrong amount of letters. Try again. ");
+                error = true;
+            }
 
             Console.WriteLine($"This is x and y {pos[0]} {pos[1]}");
 

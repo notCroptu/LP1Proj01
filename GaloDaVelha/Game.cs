@@ -69,7 +69,7 @@ namespace GaloDaVelha
                 while (true)
                 {
                     Console.WriteLine($"{player.GetName()}, please input the positioning for the piece {ToPieceUnicoded(piecePlayer.GetLastPieceInput())}. ");
-                    input = Console.ReadLine();
+                    input = Console.ReadLine().Replace(" ", "");
                     input = input.ToLower();
 
                     if (input == "exit") break;
@@ -108,7 +108,6 @@ namespace GaloDaVelha
             bool result;
             if (input == PiecesChar.Invalid)
             {
-                Console.WriteLine("Incorrect input.");
                 result = true;
             }
             else result = false;
@@ -120,7 +119,6 @@ namespace GaloDaVelha
             bool result;
             if (input[0] == -1)
             {
-                Console.WriteLine("Incorrect input.");
                 result = true; 
             }
             else result = false;
