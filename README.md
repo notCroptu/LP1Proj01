@@ -71,9 +71,9 @@
 | 6/4 | Mariana Martins | Edited and fixed errors in Render and WinCheck methods in Board.cs class |
 | 6/4 | Mariana Martins | Added documentation in Start method in Game class |
 | 6/4 | Mariana Martins | Edited References and Description in README.md |
-| 6/4 | Mariana Martins | Added instructions to Start method in Game class |
-| 6/4 | Mariana Martins | Edited Game loop in Start method in Game class |
-| 6/4 | Mariana Martins | Removed debugging tools in ConvertPlaceInput in Player class |
+| 7/4 | Mariana Martins | Added instructions to Start method in Game class |
+| 7/4 | Mariana Martins | Edited Game loop in Start method in Game class |
+| 7/4 | Mariana Martins | Removed debugging tools in ConvertPlaceInput in Player class |
 
 ---
 ## Architecture
