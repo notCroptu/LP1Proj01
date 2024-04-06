@@ -64,11 +64,11 @@ namespace GaloDaVelha
         {
             string[] inst = new string[]
             {
-                " horizontal win - \u2810\u2810\u2810\u2810 ",
-                " ",
-                " vertical win - \u2847 ",
-                " ",
-                " diagonal win - \u2880\u2820\u2810\u2808 and \u2801\u2802\u2804\u2840"
+                " win with",
+                " | \u2810\u2810\u2810\u2810 |   big \u25B2 / small \u25B4",
+                " |   \u2847  |   white \u26AA / black \u26AB",
+                " | \u2880\u2820\u2810\u2808 |   circle \u25CF / square \u2BC0",
+                " | \u2801\u2802\u2804\u2840 |   hole \U0001F573 / nohole"
             };
 
             Console.WriteLine(" ___ _____ _____ _____ _____");
@@ -194,13 +194,13 @@ namespace GaloDaVelha
 
                     // here a horizontal line is checked for
                     // here the ifs are separated for the method to be more readable
-                    if ( board[y,i] != board[y,x] && board[y,i] != null )
+                    if ( board[y,i] != null )
                     {
                         if ((board[y,x].GetChars() & chars) != 0 && (board[y,i].GetChars() & chars) != 0)
                         {
                             winH += 1;
                         }
-                        else if ((board[y,x].GetChars() & ~chars) == 0 && (board[y,i].GetChars() & ~chars) == 0)
+                        else if ((~board[y,x].GetChars() & chars) != 0 && (~board[y,i].GetChars() & chars) != 0)
                         {
                             winH += 1;
                         }
@@ -208,13 +208,13 @@ namespace GaloDaVelha
 
                     // here a vertical line is checked for
                     // here the ifs are separated for the method to be more readable
-                    if ( board[i,x] != board[y,x] && board[i,x] != null )
+                    if ( board[i,x] != null )
                     {
                         if ((board[y,x].GetChars() & chars) != 0 && (board[i,x].GetChars() & chars) != 0)
                         {
                             winV += 1;
                         }
-                        else if ((board[y,x].GetChars() & ~chars) == 0 && (board[i,x].GetChars() & ~chars) == 0)
+                        else if ((~board[y,x].GetChars() & chars) != 0 && (~board[i,x].GetChars() & chars) != 0)
                         {
                             winV += 1;
                         }
@@ -225,32 +225,28 @@ namespace GaloDaVelha
                     if ( x == y || x + y == 3 )
                     {
                         // diagonal from topleft to bottomright
-                        if ( board[i,i] != board[y,x] && board[i,i] != null )
+                        if ( board[i,i] != null )
                         {
                             if ((board[y,x].GetChars() & chars) != 0 && (board[i,i].GetChars() & chars) != 0)
                             {
                                 winD1 += 1;
-                                break;
                             }
-                            else if ((board[y,x].GetChars() & ~chars) == 0 && (board[i,i].GetChars() & ~chars) == 0)
+                            else if ((~board[y,x].GetChars() & chars) != 0 && (~board[i,i].GetChars() & chars) != 0)
                             {
                                 winD1 += 1;
-                                break;
                             }
                         }
 
                         // diagonal from topright to bottomleft
-                        if ( board[i,3-i] != board[y,x] && board[i,3-i] != null )
+                        if ( board[i,3-i] != null )
                         {
                             if ((board[y,x].GetChars() & chars) != 0 && (board[i,3-i].GetChars() & chars) != 0)
                             {
                                 winD2 += 1;
-                                break;
                             }
-                            else if ((board[y,x].GetChars() & ~chars) == 0 && (board[i,3-i].GetChars() & ~chars) == 0)
+                            else if ((~board[y,x].GetChars() & chars) != 0 && (~board[i,3-i].GetChars() & chars) != 0)
                             {
                                 winD2 += 1;
-                                break;
                             }
                         }
                     }

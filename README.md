@@ -69,6 +69,7 @@
 | 6/4 | Mariana Martins | Added for loop to check for a vertical and diagonal and edited horizontal win in WinChecker in Board.cs |
 | 6/4 | Mariana Martins | Added XML documentation for WinChecker in Board.cs |
 | 6/4 | Mariana Martins | Edited winning examples in Render method in Board.cs and fixed errors in Board and Game classes |
+| 6/4 | Mariana Martins | Edited and fixed errors in Render and WinCheck methods in Board.cs class |
 
 ---
 ## Architecture
