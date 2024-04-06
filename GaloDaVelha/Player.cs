@@ -164,8 +164,6 @@ namespace GaloDaVelha
                 error = true;
             }
 
-            Console.WriteLine($"This is x and y {pos[0]} {pos[1]}");
-
             if (error == true) LastPlaceInput[0] = -1;
             else LastPlaceInput = pos;
         }
