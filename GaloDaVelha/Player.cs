@@ -13,7 +13,7 @@ namespace GaloDaVelha
         {
             name = _name;
             LastPieceInput = 0;
-            LastPlaceInput = new int [2];
+            LastPlaceInput = new int [2] {0, 0};
         }  
 
         /// <summary>

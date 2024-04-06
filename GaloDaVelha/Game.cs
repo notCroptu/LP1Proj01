@@ -167,7 +167,7 @@ namespace GaloDaVelha
             string result = "no name"; // default value
             foreach (Piece piece in panel.GetpiecesLeft())
             {
-                if (piecechar == piece.GetChars())
+                if (piece != null && piecechar == piece.GetChars())
                 {
                     result = piece.GetUnicoded();
                     break; // Break the loop once the piece is found
