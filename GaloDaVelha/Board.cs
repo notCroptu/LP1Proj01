@@ -182,13 +182,24 @@ namespace GaloDaVelha
             }
         }
 
-        
+        /// <summary>
+        /// This method checks specifically according to the last piece played, so as to not have to check every column and row of board.
+        /// firstly it initiates the bool to be returned, and the checkers that are to be incremented until 4 (as in a line of 4 to win).
+        /// There is aslo a PieceChar list for easy reading of the method as char, aswell as x, and y.
+        /// Then the body of the method starts by running a foreach that gets the next characteristic char
+        /// in the previous list that is to be evaluated, and resets the win checkers.
+        /// Next, a for if run to change which value piece in board we are checking.
+        /// With the established char and i, ifs are then run with every possible win type.
+        /// </summary>
+        /// <param name="input"> the coordinates of the last piece played</param>
+        /// <returns> win returns true if any of the winH, winV, winD have reached 4 </returns>
         public bool CheckWin(int[] input)
         {
             bool win = false;
             int winH;
             int winV;
-            int winD;
+            int winD1;
+            int winD2;
             PieceChar[] piecechar = new PieceChar[]
             {
                 PieceChar.BigOrSmall,
@@ -199,11 +210,13 @@ namespace GaloDaVelha
             int y = input[0];
             int x = input[1];
 
+            // here the foreach is called to check for every kind of characteristic that the pieces could have
             foreach (PieceChar char in piecechar)
             {
                 winH = 0;
                 winV = 0;
-                winD = 0;
+                winD1 = 0;
+                winD2 = 0;
 
                 // this for checks for a horizontal, vertical or diagonal line with the same flag
                 for (int i = 0; i < board[input[0]].Length; i++)
@@ -246,12 +259,12 @@ namespace GaloDaVelha
                         {
                             if ((board[y][x].GetChars() & char) != 0 && (board[i][i].GetChars() & char) != 0)
                             {
-                                winD += 1;
+                                winD1 += 1;
                                 break;
                             }
                             else if ((board[y][x].GetChars() & ~char) == 0 && (board[i][i].GetChars() & ~char) == 0)
                             {
-                                winD += 1;
+                                winD1 += 1;
                                 break;
                             }
                         }
@@ -261,19 +274,19 @@ namespace GaloDaVelha
                         {
                             if ((board[y][x].GetChars() & char) != 0 && (board[i][3-i].GetChars() & char) != 0)
                             {
-                                winD += 1;
+                                winD2 += 1;
                                 break;
                             }
                             else if ((board[y][x].GetChars() & ~char) == 0 && (board[i][3-i].GetChars() & ~char) == 0)
                             {
-                                winD += 1;
+                                winD2 += 1;
                                 break;
                             }
                         }
                     }
                 }
 
-                if ( winH == 4 || winV == 4 || winD == 4)
+                if ( winH == 4 || winV == 4 || winD1 == 4 || winD2 == 4 )
                 {
                     win = true;
                     break;

@@ -66,7 +66,8 @@
 | 5/4 | Mariana Martins | Added for loop to check for a horizontal win in WinChecker in Board.cs |
 | 6/4 | Ivan Emidio | Added 3 Examples of winning the Game to the Method Render in Board.cs|
 | 6/4 | Ivan Emidio | Updated Readme.md |
-| 6/4 | Mariana Martins | Added for loop to check for a vertical and diagonal win in WinChecker and edited horizontal in Board.cs |
+| 6/4 | Mariana Martins | Added for loop to check for a vertical and diagonal and edited horizontal win in WinChecker in Board.cs |
+| 6/4 | Mariana Martins | Added XML documentation for WinChecker in Board.cs |
 
 ---
 ## Architecture
