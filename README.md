@@ -83,11 +83,11 @@
 Our project is organized around four main classes: Game, Board, Player, and Piece.
 
 * Game: This class serves as the orchestrator of the game, responsible for initializing the necessary instances and managing the game loop. It begins by prompting players for their names and providing instructions on how to play and win.
-* Board: An object representing the game board, storing the state of the game as well as all the Piece objects within it in an array called Pieces.
+* Board: An object representing the game board, storing the state of the game as well as all the Piece objects within it in two arrays: piecesLeft and board.
 * Player: This class contains methods necessary for player actions and moves within the game.
-* Piece: An object instantiated with an enumeration, each with its own string identifier.
+* Piece: An object instantiated with an enumeration, each with its own string unicoded.
 
-Additionally, we utilize an Enum called PiecesChar, which defines characteristics such as BigOrSmall, WhiteOrBlack, CircleOrSquare, and HoleOrNoHole, with an additional flag for Invalid set to -1.
+Additionally, we utilize an Enum called PiecesChar, which defines characteristics such as BigOrSmall, WhiteOrBlack, CircleOrSquare, and HoleOrNoHole within Piece objects, with an additional flag for Invalid set to -1.
 
 The game starts by initializing a Game object and invoking its Start method, which provides instructions and gathers player names. Then, the game loop begins.
 
