@@ -27,6 +27,9 @@ namespace GaloDaVelha
         /// </summary>
         public void Start()
         {
+            // Here are the Initial instructions for the game
+
+            // Setting the nicknames for the players
             Console.Write("Input player 1's name: ");
             player1 = new Player(Console.ReadLine());
             Console.Write("Input player 2's name: ");
