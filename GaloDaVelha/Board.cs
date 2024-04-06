@@ -185,26 +185,98 @@ namespace GaloDaVelha
         
         public bool CheckWin(int[] input)
         {
-            bool winH;
-
-            // this for checks for a horizontal line with the same flags
-            for (int i = 0; i < piecesLeft[input[0]].Length; i++)
+            bool win = false;
+            int winH;
+            int winV;
+            int winD;
+            PieceChar[] piecechar = new PieceChar[]
             {
-                winH = true;
+                PieceChar.BigOrSmall,
+                PieceChar.WhiteOrBlack,
+                PieceChar.CircleOrSquare,
+                PieceChar.HoleOrNoHole
+            };
+            int y = input[0];
+            int x = input[1];
 
-                // here the ifs are separated for the method to be more readable
-                if ( i != input[1] )
+            foreach (PieceChar char in piecechar)
+            {
+                winH = 0;
+                winV = 0;
+                winD = 0;
+
+                // this for checks for a horizontal, vertical or diagonal line with the same flag
+                for (int i = 0; i < board[input[0]].Length; i++)
                 {
-                    if ( piecesLeft[input[0]][input[1]].GetChars() & piecesLeft[input[0]][i].GetChars() == 0 )
+
+                    // here a horizontal line is checked for
+                    // here the ifs are separated for the method to be more readable
+                    if ( board[y][i] != board[y][x] && board[y][i] != null )
                     {
-                        winH = false;
-                        break;
+                        if ((board[y][x].GetChars() & char) != 0 && (board[y][i].GetChars() & char) != 0)
+                        {
+                            winH += 1;
+                        }
+                        else if ((board[y][x].GetChars() & ~char) == 0 && (board[y][i].GetChars() & ~char) == 0)
+                        {
+                            winH += 1;
+                        }
                     }
-                    else if ( piecesLeft[input[0]][input[1]].GetChars() & piecesLeft[input[0]][i].GetChars() == 0 )
+
+                    // here a vertical line is checked for
+                    // here the ifs are separated for the method to be more readable
+                    if ( board[i][x] != board[y][x] && board[i][x] != null )
                     {
-                        winH = false;
-                        break;
+                        if ((board[y][x].GetChars() & char) != 0 && (board[i][x].GetChars() & char) != 0)
+                        {
+                            winV += 1;
+                        }
+                        else if ((board[y][x].GetChars() & ~char) == 0 && (board[i][x].GetChars() & ~char) == 0)
+                        {
+                            winV += 1;
+                        }
                     }
+
+                    // here a diagonal line is checked for only if the piece is in the diagonal lines itself
+                    // here the ifs are separated for the method to be more readable
+                    if ( x == y || x + y == 3 )
+                    {
+                        // diagonal from topleft to bottomright
+                        if ( board[i][i] != board[y][x] && board[i][i] != null )
+                        {
+                            if ((board[y][x].GetChars() & char) != 0 && (board[i][i].GetChars() & char) != 0)
+                            {
+                                winD += 1;
+                                break;
+                            }
+                            else if ((board[y][x].GetChars() & ~char) == 0 && (board[i][i].GetChars() & ~char) == 0)
+                            {
+                                winD += 1;
+                                break;
+                            }
+                        }
+
+                        // diagonal from topright to bottomleft
+                        if ( board[i][3-i] != board[y][x] && board[i][3-i] != null )
+                        {
+                            if ((board[y][x].GetChars() & char) != 0 && (board[i][3-i].GetChars() & char) != 0)
+                            {
+                                winD += 1;
+                                break;
+                            }
+                            else if ((board[y][x].GetChars() & ~char) == 0 && (board[i][3-i].GetChars() & ~char) == 0)
+                            {
+                                winD += 1;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if ( winH == 4 || winV == 4 || winD == 4)
+                {
+                    win = true;
+                    break;
                 }
             }
 
