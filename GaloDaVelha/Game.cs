@@ -53,7 +53,7 @@ namespace GaloDaVelha
                     Console.WriteLine($"{player.GetName()} is the Winner!");
                     break;
                 }
-
+                
                 while (true)
                 {
                     Console.WriteLine($"{player.GetName()}, please input the next piece to be moved. ");

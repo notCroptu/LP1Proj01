@@ -62,6 +62,46 @@ namespace GaloDaVelha
         /// </summary>
         public void Render()
         {
+            /// Text Explaining 3 ways to win the Game
+            Console.WriteLine("\n Way of Winning the Games: ");
+            Console.WriteLine("- Group 4 Pieces of the same representation in one way of the examples below. \n");
+            
+            /// Example Winning Vertical Line
+            Console.WriteLine("Vertical\n");
+            Console.WriteLine(" ___ _____ _____ _____ _____");
+            Console.WriteLine("|   |   A   |  B  |  C  |  D  |");
+            Console.WriteLine("| 0 |   \u25CF   |     |     |     |");
+            Console.WriteLine("| 1 |   \u25CF   |     |     |     |");
+            Console.WriteLine("| 2 |   \u25CF   |     |     |     |");
+            Console.WriteLine("| 3 |   \u25CF   |     |     |     |");
+            /// Adding a ReadLine to give the User some time to read the input
+            Console.ReadLine();
+
+            /// Example Winning Horizontal Line
+            Console.WriteLine("Horizontal\n");
+            Console.WriteLine(" ___ _____ _____ _____ _____");
+            Console.WriteLine("|   |  A   |  B  |  C  |  D  |");
+            Console.WriteLine("| 0 |      |     |     |     |");
+            Console.WriteLine("| 1 |      |     |     |     |");
+            Console.WriteLine("| 2 |      |     |     |     |");
+            Console.WriteLine("| 3 |  \u25CF   |  \u25CF  |  \u25CF  |  \u25CF  |");
+            /// Adding a ReadLine to give the User some time to read the input
+            Console.ReadLine();
+
+            /// Example Winning Diagonal Line
+            Console.WriteLine("Diagonal \n");
+            Console.WriteLine(" ___ _____ _____ _____ _____");
+            Console.WriteLine("|   |  A   |  B  |  C  |  D  |");
+            Console.WriteLine("| 0 |      |     |     |  \u25CF  |");
+            Console.WriteLine("| 1 |      |     |  \u25CF  |     |");
+            Console.WriteLine("| 2 |      |  \u25CF  |     |     |");
+            Console.WriteLine("| 3 |  \u25CF   |     |     |     |");
+            /// Adding a ReadLine to give the User some time to read the input
+            Console.ReadLine();
+
+            Console.WriteLine(" ");
+            Console.WriteLine(" "); 
+
             Console.WriteLine(" ___ _____ _____ _____ _____");
             Console.WriteLine("|   |  A  |  B  |  C  |  D  |");
             for (int i = 0; i < height; i++)
@@ -80,6 +120,8 @@ namespace GaloDaVelha
                 }
                 Console.WriteLine();
             }
+
+            
         }
         /// <summary>
         /// This method makes the pieces available show on the screen. If the
@@ -140,6 +182,7 @@ namespace GaloDaVelha
             }
         }
 
+        
         public bool CheckWin(int[] input)
         {
             bool winH;
@@ -157,7 +200,7 @@ namespace GaloDaVelha
                         winH = false;
                         break;
                     }
-                    else if ( ~piecesLeft[input[0]][input[1]].GetChars() & ~piecesLeft[input[0]][i].GetChars() == 0 )
+                    else if ( piecesLeft[input[0]][input[1]].GetChars() & piecesLeft[input[0]][i].GetChars() == 0 )
                     {
                         winH = false;
                         break;
@@ -165,11 +208,9 @@ namespace GaloDaVelha
                 }
             }
 
-            
-
             return win;
         }
-
+        
         public Piece[] GetpiecesLeft() => piecesLeft;
 
         public Piece[,] Getboard() => board;

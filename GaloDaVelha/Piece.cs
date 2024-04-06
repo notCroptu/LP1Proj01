@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace GaloDaVelha
 {
@@ -12,6 +12,7 @@ namespace GaloDaVelha
             chars = 0;
             unicoded = "0000";
         }
+        
 
         public void charModify(PiecesChar modifier)
         {
@@ -25,8 +26,8 @@ namespace GaloDaVelha
             if ((chars & PiecesChar.BigOrSmall) != 0) unicodedBuilder += "\u25B2";
             else unicodedBuilder += "\u25B4";
 
-            if ((chars & PiecesChar.WhiteOrBlack) != 0) unicodedBuilder += "\u26AA";
-            else unicodedBuilder += "\u26AB";
+            if ((chars & PiecesChar.WhiteOrBlack) != 0) unicodedBuilder += "\u2B1B";
+            else unicodedBuilder += "\u2B1C";
 
             if ((chars & PiecesChar.CircleOrSquare) != 0) unicodedBuilder += "\u25CF";
             else unicodedBuilder += "\u2BC0";
