@@ -128,7 +128,7 @@ flowchart LR;
     R --> If{Are there lines capable of winning according to the last played piece?};
     
     If -- True --> Win[The current player Wins.] --> E([END]);
-    If -- False --> InpPiece[Current Player please input a piece.] --> Input[Save input in input variable.] --> If2{Input is equal to "exit"};
+    If -- False --> InpPiece[Current Player please input a piece.] --> Input[Save input in input variable.] --> If2{Input is equal to 'exit'};
 
     If2 -- True --> E([END]);
     If2 -- False --> ConPiece[Convert Input to LastPiece] --> If3{Piece is valid};
