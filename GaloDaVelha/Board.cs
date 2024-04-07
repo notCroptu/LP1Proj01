@@ -118,7 +118,7 @@ namespace GaloDaVelha
             Console.WriteLine();
 
             Console.Write("|");
-            for (int i = 0; i < 8; i++)
+            for (int i = 8; i < 16; i++)
             {
                 if (piecesLeft[i] != null) //Verifies that the piece as not been used
                 {
