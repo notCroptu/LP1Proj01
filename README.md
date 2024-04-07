@@ -81,6 +81,7 @@
 | 7/4 | Mariana Martins | Added XML documentation in Board, Game, and Piece classes |
 | 7/4 | Bruno Alegria |  Made playtests, detected bugs |
 | 7/4 | Mariana Martins | Edited ShowAveilable method in Board class |
+| 7/4 | Bruno Alegria |  Did git clean -dfx and created zip file |
 
 ---
 ## Architecture
