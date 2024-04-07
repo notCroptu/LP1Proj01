@@ -27,6 +27,24 @@ namespace GaloDaVelha
         /// </summary>
         public void Start()
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            // Here are the Initial instructions for the game
+            Console.WriteLine("Welcome to Galo da Velha.");
+            Console.WriteLine();
+            Console.WriteLine("This game is won by the first person who places a piece and");
+            Console.WriteLine("completes a horizontal, vertical or diagonal line of pieces");
+            Console.WriteLine("with one of the following characteristics in common: ");
+            Console.WriteLine();
+            Console.WriteLine("Size, Colour, Shape and if it has a hole, or not.");
+            Console.WriteLine();
+            Console.WriteLine("One player will first choose the piece to be moved, and the");
+            Console.WriteLine("other will follow by placing it on the board.");
+            Console.WriteLine();
+            Console.WriteLine("Press ENTER to continue. ");
+            Console.ReadLine();
+
+            // Setting the nicknames for the players
             Console.Write("Input player 1's name: ");
             player1 = new Player(Console.ReadLine());
             Console.Write("Input player 2's name: ");
@@ -37,7 +55,7 @@ namespace GaloDaVelha
 
             while (true)
             {
-                Console.WriteLine()
+                Console.WriteLine();
                 // Show available pieces in panel.piecesleft
                 panel.ShowAvailable();
                 // the panel is rendered here
@@ -45,15 +63,21 @@ namespace GaloDaVelha
                 //followed by some instructions
                 Console.WriteLine("Commands: exit/*size *colour *shape *hole/*placement");
                 Console.WriteLine("examples: 'big white square nohole' 'A0'");
-                Console.WriteLine()
+                Console.WriteLine();
 
                 // o codigo que ve se um player ganhou deveria estar aqui, ja que o jogo deveria mostrar o render da ultima jogada antes de dar break
-
+                if (panel.CheckWin(player.GetLastPlaceInput()))
+                {
+                    Console.WriteLine($"{player.GetName()} is the Winner!");
+                    break;
+                }
+                
                 while (true)
                 {
                     Console.WriteLine($"{player.GetName()}, please input the next piece to be moved. ");
                     input = Console.ReadLine();
                     input = input.ToLower();
+                    input = input.Trim();
 
                     if (input == "exit") break;
                     else
@@ -67,13 +91,14 @@ namespace GaloDaVelha
                 if (input == "exit") break;
 
                 switchPlayer();
-                Console.WriteLine()
+                Console.WriteLine();
 
                 while (true)
                 {
                     Console.WriteLine($"{player.GetName()}, please input the positioning for the piece {ToPieceUnicoded(piecePlayer.GetLastPieceInput())}. ");
                     input = Console.ReadLine().Replace(" ", "");
                     input = input.ToLower();
+                    input = input.Trim();
 
                     if (input == "exit") break;
                     else
@@ -162,7 +187,7 @@ namespace GaloDaVelha
             string result = "no name"; // default value
             foreach (Piece piece in panel.GetpiecesLeft())
             {
-                if (piecechar == piece.GetChars())
+                if (piece != null && piecechar == piece.GetChars())
                 {
                     result = piece.GetUnicoded();
                     break; // Break the loop once the piece is found

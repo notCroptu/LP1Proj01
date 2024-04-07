@@ -13,7 +13,7 @@ namespace GaloDaVelha
         {
             name = _name;
             LastPieceInput = 0;
-            LastPlaceInput = new int [2];
+            LastPlaceInput = new int [2] {0, 0};
         }  
 
         /// <summary>
@@ -163,8 +163,6 @@ namespace GaloDaVelha
                 Console.WriteLine("Wrong amount of letters. Try again. ");
                 error = true;
             }
-
-            Console.WriteLine($"This is x and y {pos[0]} {pos[1]}");
 
             if (error == true) LastPlaceInput[0] = -1;
             else LastPlaceInput = pos;
