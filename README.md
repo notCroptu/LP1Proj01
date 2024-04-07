@@ -136,7 +136,7 @@ flowchart LR;
     If3 -- False --> InpPiece;
     If3 -- True --> Switch[Switch current player];
     
-    Switch --> InpPlace[Current Player please input a place.] --> Input2[Save input in input variable.] --> If4{Input is equal to "exit"};
+    Switch --> InpPlace[Current Player please input a place.] --> Input2[Save input in input variable.] --> If4{Input is equal to 'exit'};
 
     If4 -- True --> E([END]);
     If4 -- False --> ConPlace[Convert Input to LastPlace] --> If5{Place is valid};
