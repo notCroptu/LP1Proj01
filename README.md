@@ -116,7 +116,7 @@ During each iteration of the game loop:
 #### Fluxogram
 
 ```mermaid
-flowchart LR;
+flowchart TD;
     S([START]) -- Start --> G[Game];
     G --> Ins[/Game Instructions/];
     Ins --> PEnter[/Press ENTER to Continue/];
