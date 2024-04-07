@@ -79,6 +79,7 @@
 | 7/4 | Mariana Martins | Edited fluxogram in README and moved game loop code to Render method in board |
 | 7/4 | Mariana Martins | Edited references and fluxogram in README |
 | 7/4 | Mariana Martins | Added XML documentation in Board, Game, and Piece classes |
+| 7/4 | Mariana Martins | Edited ShowAveilable method in Board class |
 
 ---
 ## Architecture
