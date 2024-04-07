@@ -79,6 +79,7 @@
 | 7/4 | Mariana Martins | Edited fluxogram in README and moved game loop code to Render method in board |
 | 7/4 | Mariana Martins | Edited references and fluxogram in README |
 | 7/4 | Mariana Martins | Added XML documentation in Board, Game, and Piece classes |
+| 7/4 | Bruno Alegria |  Made playtests, detected bugs |
 | 7/4 | Mariana Martins | Edited ShowAveilable method in Board class |
 
 ---
@@ -241,6 +242,7 @@ flowchart TD;
         ```
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         ```
+* Copilot (Microsoft Edge)
   * how to remove an element from an array in C# without  using LINQ, a List, .Copy or T[] RemoveElement<T> or the type ref
 
         ```
@@ -274,7 +276,7 @@ flowchart TD;
         int[] numbers = { 1, 3, 4, 9, 2 };
         RemoveElement(numbers, 4); // This will remove the element '4' from the array
         ```
-* Copilot (Microsoft Edge)
+
 
 
 #### Open Code
