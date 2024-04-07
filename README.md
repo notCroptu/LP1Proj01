@@ -128,29 +128,37 @@ flowchart TD;
     R --> If{Are there lines capable of winning according to the last played piece?};
     
     If -- True --> Win[The current player Wins.] --> E([END]);
-    If -- False --> InpPiece[Current Player please input a piece.] --> Input[Save input in input variable.] --> If2{Input is equal to 'exit'};
+    If -- False --> InpPiece[/Current Player please input a piece./] --> Input[Save input in input variable.] --> If2{Input is equal to 'exit'};
 
     If2 -- True --> E([END]);
-    If2 -- False --> ConPiece[Convert Input to LastPiece] --> If3{Piece is valid};
+    If2 -- False --> ConPiece[Convert Input to Piece and save in LastPiece] --> If3{LastPiece is valid};
 
     If3 -- False --> InpPiece;
     If3 -- True --> Switch[Switch current player];
     
-    Switch --> InpPlace[Current Player please input a place.] --> Input2[Save input in input variable.] --> If4{Input is equal to 'exit'};
+    Switch --> InpPlace[/Current Player please input a place./] --> Input2[Save input in input variable.] --> If4{Input is equal to 'exit'};
 
     If4 -- True --> E([END]);
-    If4 -- False --> ConPlace[Convert Input to LastPlace] --> If5{Place is valid};
+    If4 -- False --> ConPlace[Convert Input to Place and save in LastPlace] --> If5{LastPlace is valid};
     
     If5 -- False --> InpPlace;
     If5 -- True --> Place[Place LastPiece in LastPlace inside the Game Board];
-    Place --> GL;
+    Place ==> GL;
 ```
 ---
 ## References
 #### Ideas
-* Mariana - To have 4 classes for the project, and deal with the window in the Game class.
-* Mariana - use and enumeration with bit by bit to identify pieces
-* Mariana - have an array for the board where we place the pieces, and is read in a for when we want to check is the piece is in use
+* Mariana - To have 4 classes for the project and handle the window in the Game class.
+* Mariana - Use an enumeration with bitwise operations to identify pieces.
+* Mariana - Have an array for the board where we place the pieces and is read in a loop when we want to check if the piece is in use.
+* Mariana - In the board class, create logic that prints the board.
+* Mariana - Create a Player 1 object and a Player 2 object in the Game class, but reference them through a main player and a player not in use, in order to be able to switch players.
+* Mariana - To have a method in pieces to use when a piece is initialized that creates a Unicode string with the characters from its PiecesChars variable chars.
+* Mariana - In the start method, create logic that asks the correct player which piece they want to play and where to play it (another player), and that changes player at the end of the loop.
+* Mariana - Create a method named ConvertPieceInput in the Player class to convert an input of 4 words (big/small, white/black, etc.) into an enumeration that is saved in a variable in the player LastPieceInput, or return -1 if something is wrong.
+* Mariana - In the board class, create a method that receives a variable of type PieceChar in order to place this piece in your list of pieces.
+* Mariana - Create a method in the board that checks if there are any horizontal, vertical, or diagonal lines of 4 with one of the 4 characteristics, and returns true if it does.
+* Mariana - In the render method, add a section to the side of the board that exemplifies the 3 methods of winning the game, using Unicode.
 #### Ai Code
 * ChatGPT
   * in c# how do i create and add an object to an array"
