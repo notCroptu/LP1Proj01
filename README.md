@@ -77,6 +77,8 @@
 | 7/4 | Bruno Alegria |  Edited References in README.md |
 | 7/4 | Bruno Alegria |  Edited References (AI code) in README.md |
 | 7/4 | Mariana Martins | Edited fluxogram in README and moved game loop code to Render method in board |
+| 7/4 | Mariana Martins | Edited references and fluxogram in README |
+| 7/4 | Mariana Martins | Added XML documentation in Board, Game, and Piece classes |
 
 ---
 ## Architecture
@@ -113,7 +115,7 @@ During each iteration of the game loop:
 
 4. After, The Piece is finally placed inside the board rendering, with the method PiecePlacer, and the loop repeats.
 
-#### Fluxogram
+#### Flowchart
 
 ```mermaid
 flowchart TD;

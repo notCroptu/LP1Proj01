@@ -112,6 +112,9 @@ namespace GaloDaVelha
             }
         }
 
+        /// <summary>
+        /// Here the current player and the pieceplayer are switched with a bit by bit variable.
+        /// </summary>
         public void switchPlayer()
         {
             playerTurn ^= 1;
@@ -127,6 +130,13 @@ namespace GaloDaVelha
             }
         }
 
+        /// <summary>
+        /// This is a CheckInput method specific for PieceChar
+        /// It first checks if the previously converted input is -1 (the PieceChar values of invalid). If true, returns true.
+        /// Else, if the piece is still inside piecesLeft, it returns false. Else, an error is issued, and returns true.
+        /// </summary>
+        /// <param name="input"> A variable containing the converted input of some piece, or an Invalid Piecechar </param>
+        /// <returns>returns true, or false</returns>
         public bool CheckInput(PiecesChar input)
         {
             bool hasError = false;
@@ -155,6 +165,13 @@ namespace GaloDaVelha
             return hasError;
         }
 
+        /// <summary>
+        /// This is a CheckInput method specific for int[]
+        /// It first checks if the previously converted input is -1 (the PieceChar values of invalid). If true, returns true.
+        /// Else, if the space in the game board is empty, it returns false. Else, an error is issued, and returns true.
+        /// </summary>
+        /// <param name="input"> A variable containing the converted input of some coordinates, or an Invalid Piecechar </param>
+        /// <returns>returns true, or false</returns>
         public bool CheckInput(int[] input)
         {
             bool hasError = false;
@@ -178,6 +195,11 @@ namespace GaloDaVelha
             return hasError;
         }
 
+        /// <summary>
+        /// This method searches through the pieces left to find the specified characteristics piecechar in order to correlate them with a string
+        /// </summary>
+        /// <param name="piecechar"> This is are the characteristics that the method will be looking for</param>
+        /// <returns> It returns a string of unicoded characters specific to a Piece </returns>
         public string ToPieceUnicoded(PiecesChar piecechar)
         {
             string result = "no name"; // default value

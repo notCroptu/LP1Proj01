@@ -13,12 +13,18 @@ namespace GaloDaVelha
             unicoded = "0000";
         }
         
-
+        /// <summary>
+        /// This method only modifies the identifier of the piece and variable chars
+        /// </summary>
+        /// <param name="modifier">It receives the parameter to change, colour, shape... etc.</param>
         public void charModify(PiecesChar modifier)
         {
             chars ^= modifier;
         }
 
+        /// <summary>
+        /// This method sets the Pieces unicoded string variable according to the characteristis in it's identifier, chars
+        /// </summary>
         public void unicodedModify()
         {
             string unicodedBuilder = "";

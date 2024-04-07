@@ -58,7 +58,7 @@ namespace GaloDaVelha
         }
 
         /// <summary>
-        /// Visual Representation of the board
+        /// Visual Representation of the board, aswell as other helpfull instructions
         /// </summary>
         public void Render()
         {
