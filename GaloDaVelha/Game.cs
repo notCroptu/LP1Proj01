@@ -60,10 +60,6 @@ namespace GaloDaVelha
                 panel.ShowAvailable();
                 // the panel is rendered here
                 panel.Render();
-                //followed by some instructions
-                Console.WriteLine("Commands: exit/*size *colour *shape *hole/*placement");
-                Console.WriteLine("examples: 'big white square nohole' 'A0'");
-                Console.WriteLine();
 
                 // o codigo que ve se um player ganhou deveria estar aqui, ja que o jogo deveria mostrar o render da ultima jogada antes de dar break
                 if (panel.CheckWin(player.GetLastPlaceInput()))

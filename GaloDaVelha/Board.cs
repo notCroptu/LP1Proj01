@@ -89,8 +89,10 @@ namespace GaloDaVelha
                 }
                 Console.WriteLine(inst[i +1]);
             }
-
-            
+            //followed by some instructions
+            Console.WriteLine("Commands: exit/*size *colour *shape *hole/*placement");
+            Console.WriteLine("examples: 'big white square nohole' 'A0'");
+            Console.WriteLine();
         }
         
         /// <summary>

@@ -16,7 +16,7 @@
 | 1/4 | Ivan Emidio | Added Code to the Board in Board.cs |
 | 1/4 | Ivan Emidio | Looped the Board in Game.cs |
 | 1/4 | Ivan Emidio | Created Class Piece in Piece.cs |
-| 1/4 | Ivan Emidio | Updated README.md |
+| 1/4 | Ivan Emidio | Updated Task list and references in README.md |
 | 1/4 | Mariana Martins | Created CreatePieces Method in Board Class |
 | 1/4 | Mariana Martins | Created PiecesChar Enumeration in PiecesChar.cs |
 | 2/4 | Mariana Martins | Scripted Render method in Board Class |
@@ -64,7 +64,7 @@
 | 5/4 | Mariana Martins | Edited ShowAvailable in Board.cs |
 | 5/4 | Mariana Martins | Added for loop to check for a horizontal win in WinChecker in Board.cs |
 | 6/4 | Ivan Emidio | Added 3 Examples of winning the Game to the Method Render in Board.cs|
-| 6/4 | Ivan Emidio | Updated Readme.md |
+| 6/4 | Ivan Emidio | Updated Task list in Readme.md |
 | 6/4 | Mariana Martins | Added for loop to check for a vertical and diagonal and edited horizontal win in WinChecker in Board.cs |
 | 6/4 | Mariana Martins | Added XML documentation for WinChecker in Board.cs |
 | 6/4 | Mariana Martins | Edited winning examples in Render method in Board.cs and fixed errors in Board and Game classes |
@@ -76,6 +76,7 @@
 | 7/4 | Mariana Martins | Removed debugging tools in ConvertPlaceInput in Player class |
 | 7/4 | Bruno Alegria |  Edited References in README.md |
 | 7/4 | Bruno Alegria |  Edited References (AI code) in README.md |
+| 7/4 | Mariana Martins | Edited fluxogram in README and moved game loop code to Render method in board |
 
 ---
 ## Architecture
@@ -116,7 +117,33 @@ During each iteration of the game loop:
 
 ```mermaid
 flowchart LR;
-    M(Main) --> G(Game);
+    S([START]) -- Start --> G[Game];
+    G --> Ins[/Game Instructions/];
+    Inst --> PEnter[/Press ENTER to Continue/];
+    ENTER --> Nick[/Input NickNames/];
+    Names --> GL[Game Loop];
+
+    GL -- ShowAvailable --> SA[/Show available Pieces/];
+    SA -- Render --> R[/Render the Game Board and instructions/];
+    R --> If{Are there lines capable of winning according to the last played piece?};
+    
+    If1 -- True --> Win[The current player Wins.] --> E([END]);
+    If1 -- False --> InpPiece[Current Player please input a piece.] --> Input[Save input in input variable.] --> If2{Input is equal to "exit"};
+
+    If2 -- True --> E([END]);
+    If2 -- False --> ConPiece[Convert Input to LastPiece] --> If3{Piece is valid};
+
+    If3 -- False --> InpPiece;
+    If3 -- True --> Switch[Switch current player]
+    
+    Switch --> InpPlace[Current Player please input a place.] --> Input[Save input in input variable.] --> If4{Input is equal to "exit"};
+
+    If4 -- True --> E([END]);
+    If4 -- False --> ConPlace[Convert Input to LastPlace] --> If5{Place is valid};
+    
+    If5 -- False --> InpPlace;
+    If5 -- True --> Place[Place LastPiece in LastPlace inside the Game Board];
+    Place --> GL;
 ```
 ---
 ## References
@@ -126,7 +153,8 @@ flowchart LR;
 * Mariana - have an array for the board where we place the pieces, and is read in a for when we want to check is the piece is in use
 #### Ai Code
 * ChatGPT
-  * "in c# how do i create and add an object to an array"
+  * in c# how do i create and add an object to an array"
+
         ```
         // Create a list to hold your objects
         List<MyObject> objectList = new List<MyObject>();
@@ -138,12 +166,14 @@ flowchart LR;
         objectList.Add(obj1);
         ```
   * give me some examples of this x % y
+
         ```
         int x = 10;
         int y = 3;
         int result = x % y; // result will be 1 because 10 divided by 3 leaves a remainder of 1
         ```
   * how do i initialize a rectangular array
+
         ```
         elementType[,] arrayName = new elementType[rows, columns];
         ```
@@ -152,10 +182,12 @@ flowchart LR;
         string myString = "Hello \u2665 World";
         ```
   * how do i use this unicode for c# U+1F573
+
         ```
         string myString = "\U0001F573";
         ```
   * how do i create an array with a string separated by the strings spaces
+
         ```
         string inputString = "apple banana cherry";
 
@@ -164,6 +196,7 @@ flowchart LR;
         // Now 'array' contains ["apple", "banana", "cherry"]
         ```
   * how do i in bitwise make a bit always turn to a 0 or always turn to a 1
+
         ```
         int number = 0b10101010; // Example number
 
@@ -181,22 +214,25 @@ flowchart LR;
   * if input is a string, can i do input[1] to get a specific character
     * Yes, you can use indexing with square brackets [] on a string in C# to access individual characters at specific positions.
   * how to make a char into an int
+
         ```
         char myChar = 'A';
         int myInt = (int)myChar;
         ```
   * how to pass string to int
+
         ```
         string str = "123";
         int number = int.Parse(str);
         ```
   * how do i make sure that my unicode characters show up on any console
+
         ```
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         ```
   * how to remove an element from an array in C# without  using LINQ, a List, .Copy or T[] RemoveElement<T> or the type ref
+
         ```
-      
         public static void RemoveElement(int[] source, int value)
         {
             // Find the index of the element to remove
@@ -226,9 +262,8 @@ flowchart LR;
         // Usage
         int[] numbers = { 1, 3, 4, 9, 2 };
         RemoveElement(numbers, 4); // This will remove the element '4' from the array
-    
         ```
-*Copilot (Microsoft Edge)
+* Copilot (Microsoft Edge)
 
 
 #### Open Code
