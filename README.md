@@ -75,6 +75,7 @@
 | 7/4 | Mariana Martins | Edited Game loop in Start method in Game class |
 | 7/4 | Mariana Martins | Removed debugging tools in ConvertPlaceInput in Player class |
 | 7/4 | Bruno Alegria |  Edited References in README.md |
+| 7/4 | Bruno Alegria |  Edited References (AI code) in README.md |
 
 ---
 ## Architecture
@@ -193,6 +194,43 @@ flowchart LR;
         ```
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         ```
+  * how to remove an element from an array in C# without  using LINQ, a List, .Copy or T[] RemoveElement<T> or the type ref
+        ```
+      
+        public static void RemoveElement(int[] source, int value)
+        {
+            // Find the index of the element to remove
+            int index = -1;
+            for (int i = 0; i < source.Length; i++)
+            {
+                if (source[i] == value)
+                {
+                    index = i;
+                    break;
+                }
+            }
+        
+            // If the element is not found, no need to remove
+            if (index == -1) return;
+        
+            // Shift elements down to overwrite the removed element
+            for (int i = index; i < source.Length - 1; i++)
+            {
+                source[i] = source[i + 1];
+            }
+        
+            // Truncate the last element
+            Array.Resize(ref source, source.Length - 1);
+        }
+        
+        // Usage
+        int[] numbers = { 1, 3, 4, 9, 2 };
+        RemoveElement(numbers, 4); // This will remove the element '4' from the array
+    
+        ```
+*Copilot (Microsoft Edge)
+
+
 #### Open Code
 * [Stack Overflow, How to draw tables](https://stackoverflow.com/questions/856845/how-to-best-way-to-draw-table-in-console-app-c)
 #### Libraries
