@@ -74,6 +74,7 @@
 | 7/4 | Mariana Martins | Added instructions to Start method in Game class |
 | 7/4 | Mariana Martins | Edited Game loop in Start method in Game class |
 | 7/4 | Mariana Martins | Removed debugging tools in ConvertPlaceInput in Player class |
+| 7/4 | Bruno Alegria |  Edited References in README.md |
 
 ---
 ## Architecture
@@ -200,3 +201,4 @@ flowchart LR;
 * [Mermaid docs](https://mermaid.js.org/syntax/flowchart.html)
 * [W3 Schools](https://www.w3schools.com/)
 * [Techno Kids - Flowchart for Programming](https://blog.technokids.com/programming/how-to-make-a-flowchart-for-programming-easy-to-understand/#:~:text=When%20creating%20a%20flowchart%20to,show%20the%20flow%20of%20information.)
+* [Microsoft Learn: Operator overloading](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading)
